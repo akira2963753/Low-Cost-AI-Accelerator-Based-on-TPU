@@ -1,3 +1,2 @@
-Weight-Aware and Reduced-Precision with Compensation Architecture  
-Designs for Low-Cost AI Accelerators  
-- 
+#### NTUST-EE ICS Senior Project    
+Weight-Aware and Reduced-Precision with Compensation Architecture Designs for Low-Cost AI Accelerators     
