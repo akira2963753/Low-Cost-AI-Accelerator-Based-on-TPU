@@ -1,2 +1,2 @@
-## NTUST-EE Senior Project (ICS)      
+## NTUST-EE Senior Project (ICS) - Low Cost AI Accelerator    
 #### Weight-Aware and Reduced-Precision with Compensation Architecture Designs for Low-Cost AI Accelerators     
