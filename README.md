@@ -36,6 +36,9 @@ Examples include lowering the learning rate, applying L1 regularization, and L2 
 | **Float32 quantize to Q1.7 (8x5)** | 92.71%  | 89.63%  | 11.36%  | 19.27%  |
 | **Float32 quantize to Q1.7 and add Expect value compensation (8x5)** | 97.29%  | 97.44%  | 98.96%  | 99.40%  |
 | **Float32 quantize to Q1.7 and add Expect value & Non-MSR4 compensation (8x5)** | 97.34%  | 97.63%  | 98.96%  | 99.40%  |
+
+For complex models like ResNet and AlexNet,   
+quantization without expectation compensation leads to an accuracy drop below 20%, while with compensation, the accuracy only decreases by less than 1%.  
   
 
 
