@@ -1,2 +1,2 @@
 ## Low Cost AI Accelerator   
-![RPTPU_DATAPATH drawio (1)](https://github.com/user-attachments/assets/22e5f2e2-c289-44f0-9244-b5c615723f74)
+![RPTPU_DATAPATH drawio (2)](https://github.com/user-attachments/assets/c3ad22a5-a323-4b0d-bf3b-2d8e4086395d)
