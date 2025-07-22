@@ -1,4 +1,4 @@
-## Low Cost AI Accelerator   
+# Low Cost AI Accelerator   
 
 ## MSR-4 Analysis : 
 All four trained models exhibit MSR-4 distributions covering at least 99% of the weights. In the worst case, only about 2.9 out of every 256 weights are Non-MSR-4.  
