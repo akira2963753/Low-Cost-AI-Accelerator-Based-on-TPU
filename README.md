@@ -9,6 +9,8 @@ All four trained models exhibit MSR-4 distributions covering at least 99% of the
 | Input Dimensions | 28x28  | 28x28  | 28x28  | 28x28  |
 | Output Class | 10      | 10      | 10      | 10      |
 | Test Accuracy | 98.08% | 98.05% | 99.61% | 99.56% |
+| MSR-4 % & Non-MSR-4 per 256 weights (After Training) | 
+|:----------------------------------------------------:|
 | MSR-4 %     | 99.98%  | 98.90%  | 99.61%  | 99.98%  |
 | Non-MSR-4 per 256 weights | 0.1     | 2.9     | 0.1     | 0.0     |
 
