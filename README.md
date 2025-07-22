@@ -3,7 +3,7 @@
 ### MSR-4 Analysis : 
 All four trained models exhibit MSR-4 distributions covering at least 99% of the weights. In the worst case, only about 2.9 out of every 256 weights are Non-MSR-4.  
 | Model       | MLP     | LeNet   | ResNet  | AlexNet |
-|-------------|---------|---------|---------|---------|
+|:----:|:------:|:-----:|:---------:|:-------:|
 | Layers (CONV/FC) | 3(0/3) | 5(2/3) | 17(16/1) | 8(5/3) |
 | Dataset     | MNIST   | MNIST   | MNIST   | MNIST   |
 | Input Dimensions | 28x28  | 28x28  | 28x28  | 28x28  |
