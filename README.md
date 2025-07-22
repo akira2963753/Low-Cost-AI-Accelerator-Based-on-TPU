@@ -3,10 +3,7 @@ Prior research has explored this approach in hardware accelerator designs such a
   
 <img width="413" height="346" alt="image" src="https://github.com/user-attachments/assets/0e688109-fb36-4551-bc2f-2232173e1ab3" />    
   
-If a weight value holds four consecutive identical bits (either 0s or 1s) starting from the most significant bit,   
-these bits can be replaced with a single sign bit without degrading the accuracy of model. By exploiting this MSR property,   
-the word length of the weight can be effectively reduced. As a result, each PE within the systolic array of the tensor processing unit can use a smaller multiplier for computation.   
-This reduction not only decreases the overall area and power consumption but also enables faster computation due to the shorter input word length, thereby improving the overall performance.  
+If a weight value holds four consecutive identical bits (either 0s or 1s) starting from the most significant bit, these bits can be replaced with a single sign bit without degrading the accuracy of model. By exploiting this MSR property, the word length of the weight can be effectively reduced. As a result, each PE within the systolic array of the tensor processing unit can use a smaller multiplier for computation. This reduction not only decreases the overall area and power consumption but also enables faster computation due to the shorter input word length, thereby improving the overall performance.  
 
 
 
