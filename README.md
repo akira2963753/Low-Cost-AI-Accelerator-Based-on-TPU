@@ -26,7 +26,7 @@ Examples include lowering the learning rate, applying L1 regularization, and L2 
 
 
 ## Quantization Accuracy Analysis (Post-train Quantization) :  
-<img width="1000" height="350" alt="image" src="https://github.com/user-attachments/assets/e66c9f1d-4400-4cb7-a029-fabe25879f89" />
+<img width="1198" height="473" alt="image" src="https://github.com/user-attachments/assets/b867669b-beb9-4b30-9546-873f6b0632cf" />
 
 
 For complex models like ResNet and AlexNet,   
