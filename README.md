@@ -11,15 +11,8 @@ If a weight value holds four consecutive identical bits (either 0s or 1s) starti
 
 ## MSR-4 Analysis : 
 All four trained models exhibit MSR-4 distributions covering at least 99% of the weights. In the worst case, only about 2.9 out of every 256 weights are Non-MSR-4.  
-| Model       | MLP     | LeNet   | ResNet  | AlexNet |
-|:----:|:------:|:-----:|:---------:|:-------:|
-| Layers (CONV/FC) | 3(0/3) | 5(2/3) | 17(16/1) | 8(5/3) |
-| Dataset     | MNIST   | MNIST   | MNIST   | MNIST   |
-| Input Dimensions | 28x28  | 28x28  | 28x28  | 28x28  |
-| Output Class | 10      | 10      | 10      | 10      |
-| Test Accuracy | 98.08% | 98.05% | 99.61% | 99.56% |
-| MSR-4 %     | 99.98%  | 98.90%  | 99.61%  | 99.98%  |
-| Non-MSR-4 per 256 weights | 0.1     | 2.9     | 0.1     | 0.0     |
+<img width="1122" height="417" alt="image" src="https://github.com/user-attachments/assets/c4fe2d6a-f449-40fc-8f40-f9ab724513c2" />  
+
 
 As a result, in a 256×256 Systolic Array, each column would require 3 PEs capable of performing compensation.  
 
