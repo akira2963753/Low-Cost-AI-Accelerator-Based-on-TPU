@@ -1,6 +1,6 @@
 ## Low Cost AI Accelerator   
 
-### MSR-4 Analysis : 
+## MSR-4 Analysis : 
 All four trained models exhibit MSR-4 distributions covering at least 99% of the weights. In the worst case, only about 2.9 out of every 256 weights are Non-MSR-4.  
 | Model       | MLP     | LeNet   | ResNet  | AlexNet |
 |:----:|:------:|:-----:|:---------:|:-------:|
@@ -15,7 +15,7 @@ All four trained models exhibit MSR-4 distributions covering at least 99% of the
 As a result, in a 256×256 Systolic Array, each column would require 3 PEs capable of performing compensation.  
 
 
-### Model Training Structure :  
+## Model Training Structure :  
 | Model       | MLP     | LeNet   | ResNet  | AlexNet |
 |:-----------:|:-------:|:-------:|:-------:|:-------:|
 | Optimizer   | Adam    | Adam    | Adam    | Adam    |
@@ -29,7 +29,7 @@ During model training, certain methods used to prevent overfitting can also help
 Examples include lowering the learning rate, applying L1 regularization, and L2 regularization (weight decay).  
 
 
-### Quantization Accuracy Analysis (Post-train Quantization) :  
+## Quantization Accuracy Analysis (Post-train Quantization) :  
 | Model       | MLP     | LeNet   | ResNet  | AlexNet |
 |:-----------:|:-------:|:-------:|:-------:|:-------:|
 | **Original (32x32)** | 98.08%  | 98.05%  | 99.61%  | 99.56%  |
@@ -42,11 +42,11 @@ quantization without expectation compensation leads to an accuracy drop below 20
   
 
 
-### Proposed TPU Architecture :  
+## Proposed TPU Architecture :  
 ![RPTPU_DATAPATH drawio (6)](https://github.com/user-attachments/assets/fb4c0342-37bb-40c0-9241-e5ba87262708)
 
-### Reduce Processing Element (RPE) :   
+## Reduce Processing Element (RPE) :   
 ![RPE drawio](https://github.com/user-attachments/assets/c790f418-5e94-47a2-b850-18127da7769d)
 
-### Compensation Processing Element (CPE) :  
+## Compensation Processing Element (CPE) :  
 ![CPE drawio](https://github.com/user-attachments/assets/e12d8fac-3e1d-444b-9175-dcd8a724af95)
