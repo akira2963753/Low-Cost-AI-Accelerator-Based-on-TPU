@@ -1,6 +1,6 @@
 module RPE#(
     parameter SIZE = 8,
-    parameter PARTIAL_SUM_WIDTH = ((8*4) + 4) + SIZE + 1, // Size of the partial sum
+    parameter PARTIAL_SUM_WIDTH = ((8+4) + 4) + $clog2(SIZE) + 1, // Size of the partial sum
     parameter ACTIVATION_EXTEND_WIDTH = PARTIAL_SUM_WIDTH - 8 // Width of the extended activation
 )(
     input clk,

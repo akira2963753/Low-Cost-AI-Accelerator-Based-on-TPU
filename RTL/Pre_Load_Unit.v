@@ -21,7 +21,7 @@ module Pre_Load_Unit#(
     parameter CMEM_ADDR_WIDTH = $clog2(CMEM_SIZE), // Address width for the compensation memory
     parameter WEIGHT_OUT_WIDTH = SIZE * 5, // Width of the weight output
     parameter INDEX_WIDTH = ADDR_WIDTH, // Index width for the weight memory
-    parameter PARTIAL_SUM_WIDTH = ((8 * 4) + 4) + SIZE + 1, // Size of the partial sum
+    parameter PARTIAL_SUM_WIDTH = ((8+4) + 4) + $clog2(SIZE) + 1, // Size of the partial sum
     parameter ACTIVATION_EXTEND_WIDTH = PARTIAL_SUM_WIDTH - 8 // Width of the extended activation
 )(
     input clk,
@@ -102,9 +102,9 @@ module Pre_Load_Unit#(
     wire [CMEM_SIZE-1:0] Compensation_Weight_out;
     wire Compensation_Weight_out_valid;
     wire [2:0] Compensation_Weight_Pass[0:CMEM_SIZE-1];
-    wire [32:0] Compensation_out[0:CMEM_SIZE-1];
+    wire [13:0] Compensation_out[0:CMEM_SIZE-1];
     wire Compensation_Weight_Pass_valid[0:CMEM_SIZE-1];
-    wire [32:0] Compensation_Acc_Sum_out[0:SIZE-1];
+    wire [13:0] Compensation_Acc_Sum_out[0:SIZE-1];
     wire Activation_cout_valid;
     wire [7:0] Activation_out_valid;
 

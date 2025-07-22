@@ -5,8 +5,8 @@ module Compensation_Accumulator(
     input clk,
     input rst,
     input Cal,
-    input [32:0] Compensation_Sum_in,
-    output reg [32:0] Compensation_Sum_out
+    input [13:0] Compensation_Sum_in,
+    output reg [13:0] Compensation_Sum_out
 );
 
     always @(posedge clk or posedge rst) begin

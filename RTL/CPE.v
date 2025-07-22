@@ -10,12 +10,12 @@ module CPE (
     input rst,
     input [2:0] Compensation_Weight,
     input [6:0] Activation_cout,
-    input [32:0] Compensation_Partial_Sum,
+    input [13:0] Compensation_Partial_Sum,
     input Activation_cout_valid,
     input Compensation_Weight_out_valid,
     output reg [2:0] Compensation_Weight_Pass,
     output Compensation_Weight_Pass_valid,
-    output reg [32:0] Compensation_out
+    output reg [13:0] Compensation_out
 );
     
     // Valid state for Compensation Weight Pass
@@ -24,8 +24,8 @@ module CPE (
     // Always block to handle the processing of compensation weights and activations
     always @(posedge clk or posedge rst) begin
         if(rst) begin // Reset the outputs to zero
-            Compensation_Weight_Pass <= 3'd0;
-            Compensation_out <= 33'd0;
+            Compensation_Weight_Pass <= 0;
+            Compensation_out <= 0;
         end 
         else begin
             // If Compensation Weight is valid, pass it through
