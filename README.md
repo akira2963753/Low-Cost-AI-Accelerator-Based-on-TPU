@@ -12,8 +12,9 @@
 我們接著去分析在不同深度神經網路模型中，MSR數目各自的占比，我們將模型的權重以定點數格式量化成INT8，可以發現幾乎99%都含有MSR-4，由於權重皆是小於0的數字，我們可以將MSR-4這四個位元縮減成一個位元來表示，這不僅可以縮短我們的計算成本、功耗，也能夠降低我們使用的記憶體空間。
    
 Q1.7格式 :   
-假設權重是0.0566，我們會將其轉換成INT8定點數(Q1.7格式)，因此0.0566 * 128 = 7.2448(Round) = 7 = 00000111(2)  
-
+假設權重是0.0566，我們會將其轉換成INT8定點數(Q1.7格式)，一個Bit代表整數(Sign Bit)，其他7個bit為小數部分  
+因此0.0566 * 128 = 7.2448(Round) = 7 = 00000111(2)   
+  
 
 ## MSR-4 Analysis : 
 All four trained models exhibit MSR-4 distributions covering at least 99% of the weights. In the worst case, only about 2.9 out of every 256 weights are Non-MSR-4.  
