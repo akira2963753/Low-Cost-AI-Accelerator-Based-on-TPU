@@ -6,7 +6,7 @@
 
 
 
-## What is the *Most Significant Runs* (MSR) :  
+## What is the *Most Significant Runs (MSR)* :  
 <img width="1867" height="440" alt="image" src="https://github.com/user-attachments/assets/8b25f99f-a2e1-4d54-872e-b3422aaa75d6" />
 
 
