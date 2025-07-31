@@ -1,12 +1,12 @@
 # Low Cost AI Accelerator Based on Systolic Array 
 
-## What is the *Systolic Array*  :
+## What is the Systolic Array  :
 
 
 
 
 
-## What is the *Most Significant Runs (MSR)* :  
+## What is the Most Significant Runs (MSR) :  
 通常深度神經網絡模型使用32位元浮點數 (Floating Point) 運算進行訓練。訓練完成後可以獲得32位元的權重值。然而，為了減少計算資源和時間，深度神經網路通常使用定點數運算進行"推論計算"。而由於大部分的權重皆接近於0，因此我們把權重轉換成定點數時，如下圖所示，可以發現在高位元部分常常會有連續的1或是0，我們稱之為*Most Significant Runs (MSR)*。  
 <img width="1867" height="440" alt="image" src="https://github.com/user-attachments/assets/8b25f99f-a2e1-4d54-872e-b3422aaa75d6" />   
 
