@@ -60,6 +60,7 @@ quantization without expectation compensation leads to an accuracy drop below 20
 ## Compensation Processing Element (CPE) :  
 ![CPE drawio](https://github.com/user-attachments/assets/e12d8fac-3e1d-444b-9175-dcd8a724af95)
 
-## Mem Read :  
+## Weight Memory & Compensation Memory Read :  
+
 <img width="995" height="284" alt="image" src="https://github.com/user-attachments/assets/da81fa4e-47f9-4dd7-a258-9e2779229d3e" />
 
