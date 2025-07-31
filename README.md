@@ -33,8 +33,10 @@
 <img width="1108" height="427" alt="image" src="https://github.com/user-attachments/assets/ba55a537-6cca-4147-8348-5d5ebfdbcf39" />
 
 
-During model training, certain methods used to prevent overfitting can also help increase the MSR-4 percentage.   
-Examples include lowering the learning rate, applying L1 regularization, and L2 regularization (weight decay).  
+此外，在訓練模型時，一些避免overfitting的方法，因為其會將權重分布縮小的特性，也有助於我們提高MSR-4%。  
+例如 : 降低學習率、L1 Regularization and L2 Regularization (Weight Decay)     
+
+ 
 
 
 ## Quantization Accuracy Analysis (Post-train Quantization) :  
