@@ -1,6 +1,6 @@
 # Low Cost AI Accelerator Based on TPU    
 
-## What is the Systolic Array  :
+## What is Tensor Processing Unit (TPU)  :
 
 
 
