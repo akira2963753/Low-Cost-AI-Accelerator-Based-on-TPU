@@ -1,4 +1,4 @@
-# Low Cost AI Accelerator Based on Systolic Array 
+# Low Cost AI Accelerator Based on Tensor Processing Unit   
 
 ## What is the Systolic Array  :
 
