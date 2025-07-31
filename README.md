@@ -61,6 +61,6 @@ quantization without expectation compensation leads to an accuracy drop below 20
 ![CPE drawio](https://github.com/user-attachments/assets/e12d8fac-3e1d-444b-9175-dcd8a724af95)
 
 ## Weight Memory & Compensation Memory Read :  
-系統會在Mem_Write訊號Done之後，開始準備讀出Weight Memory and Compensation Memory的Weight Data pre-loaD到Systolic Array的PE裡面，因此，我先將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。
+系統會在Mem_Write訊號Done之後，開始準備讀出Weight Memory and Compensation Memory的Weight Data pre-load到Systolic Array的PE裡面，因此，在Mem_Write結束的同時，我將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。
 <img width="995" height="284" alt="image" src="https://github.com/user-attachments/assets/da81fa4e-47f9-4dd7-a258-9e2779229d3e" />
 
