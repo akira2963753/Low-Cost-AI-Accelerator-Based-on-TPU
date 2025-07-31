@@ -54,7 +54,8 @@ quantization without expectation compensation leads to an accuracy drop below 20
 
 
 ## Proposed TPU Architecture :  
-![RPTPU_DATAPATH drawio (6)](https://github.com/user-attachments/assets/fb4c0342-37bb-40c0-9241-e5ba87262708)
+![RPTPU drawio](https://github.com/user-attachments/assets/e4d37d8c-8214-4334-b468-c2117c6f3931)  
+
 
 ## Reduce Processing Element (RPE) :   
 ![RPE drawio](https://github.com/user-attachments/assets/c790f418-5e94-47a2-b850-18127da7769d)
