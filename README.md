@@ -29,12 +29,10 @@
 
 ## MSR-4 Analysis : 
 我們藉由去觀察訓練完的權重MSR-4的分布情形，發現每256個權重中，最差只會有2.9個是沒有MSR-4的權重資料。因此，對於256x256的Systolic Array來說，每個col我只需要3個row來做補償即可。  
-<img width="1122" height="417" alt="image" src="https://github.com/user-attachments/assets/c4fe2d6a-f449-40fc-8f40-f9ab724513c2" />   
   
 此外，在訓練模型時，一些避免overfitting的方法，因為其會將權重分布縮小的特性，也有助於我們提高MSR-4%。  
 例如 : 降低學習率、L1 Regularization and L2 Regularization (Weight Decay)    
 以下是我們這次訓練的模型結構 :   
-<img width="1108" height="427" alt="image" src="https://github.com/user-attachments/assets/ba55a537-6cca-4147-8348-5d5ebfdbcf39" />  
   
 ## Proposed TPU Architecture :  
 ![RPTPU drawio (1)](https://github.com/user-attachments/assets/b3c55624-5ac7-4c73-9152-b0260b0ea0ac)   
