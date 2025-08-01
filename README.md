@@ -35,7 +35,7 @@
 以下是我們這次訓練的模型結構 :   
   
 ## Proposed TPU Architecture :  
-![RPTPU drawio (2)](https://github.com/user-attachments/assets/479566a6-0c02-4701-9771-33061693a96e)
+![RPTPU drawio](https://github.com/user-attachments/assets/5da91644-8498-4474-ad14-df98444436ce)  
 
 
 ## Reduce Processing Element (RPE) :   
