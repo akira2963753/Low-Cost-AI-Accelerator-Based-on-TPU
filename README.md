@@ -49,12 +49,12 @@
 ![Acc drawio](https://github.com/user-attachments/assets/3f9eb4eb-a362-4aea-9439-404e5581edda)
 
 
-## RPE / CPE :   
+## RPE / CPE Structure :   
 |![PE drawio (1)](https://github.com/user-attachments/assets/6d8220a3-97a1-43b4-bcf9-a325b713fe92)|![CPE drawio (1)](https://github.com/user-attachments/assets/2507c175-738a-4372-8175-9c798b9057ba)|
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
 
-## Weight/Compensation/Activation Memory Structure :
+## Weight / Compensation / Activation Memory Structure :
 在這個專案裡，為了實作之便利性，我們對Memory的結構稍微做了一些調整，設定其一次會輸出8個地址的資料，實際上可以將這些單一塊的Memory看做是8個SRAM，一次輸出8筆資料。
 ![Memory drawio (1)](https://github.com/user-attachments/assets/7948d795-7941-4c81-9795-a97a43021b8e)
   
