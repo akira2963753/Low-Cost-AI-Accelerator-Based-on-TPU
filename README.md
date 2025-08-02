@@ -68,7 +68,7 @@
 ![Acc drawio](https://github.com/user-attachments/assets/3f9eb4eb-a362-4aea-9439-404e5581edda)  
 
 ## System FSM :  
-| ![FSM drawio](https://github.com/user-attachments/assets/d0238e3a-ff7f-47bb-9a16-2e0e58f2aab0)  | 本次專案系統會在開機時直接LOAD_MEM，因此沒有IDLE狀態|
+| ![FSM drawio](https://github.com/user-attachments/assets/d0238e3a-ff7f-47bb-9a16-2e0e58f2aab0)  | 由於本次專案設定系統會在開機時直接開始進行記憶體寫入，因此沒有IDLE狀態，初始狀態即是LOAD_MEM            |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
 
