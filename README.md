@@ -1,4 +1,4 @@
-![FSM drawio](https://github.com/user-attachments/assets/90c7fcfa-987d-4093-bb83-7ca8b3993cf1)# Low Cost AI Accelerator Based on TPU    
+# Low Cost AI Accelerator Based on TPU    
 
 ## Tensor Processing Unit (TPU) :
 <img width="1145" height="850" alt="image" src="https://github.com/user-attachments/assets/b0305d9b-6ab0-49fb-afa2-cb705ed8386a" />  
