@@ -5,7 +5,8 @@
 
 ## Data Flow :
 在本次專案中，我們採用的是Weight Sationary Data Flow來實現我們的TPU架構。  
-<img width="1664" height="877" alt="image" src="https://github.com/user-attachments/assets/c114ffd9-b225-458d-9e16-d64c49b8c25d" />  
+<img width="1712" height="646" alt="image" src="https://github.com/user-attachments/assets/85d88d2e-7649-4d30-91a9-e6081e57faa3" />  
+<img width="1664" height="877" alt="image" src="https://github.com/user-attachments/assets/c114ffd9-b225-458d-9e16-d64c49b8c25d" />   
   
 ## Most Significant Runs (MSR) :  
 通常深度神經網絡模型使用32位元浮點數 (Floating Point) 運算進行訓練。訓練完成後可以獲得32位元的權重值。然而，為了減少計算資源和時間，深度神經網路通常使用定點數運算進行"推論計算"。而由於大部分的權重皆接近於0，因此我們把權重轉換成定點數時，如下圖所示，可以發現在高位元部分常常會有連續的1或是0，我們稱之為*Most Significant Runs (MSR)*。 
