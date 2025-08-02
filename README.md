@@ -70,7 +70,7 @@
 
 
 ## RPE / CPE Structure :   
-|![PE drawio (1)](https://github.com/user-attachments/assets/6d8220a3-97a1-43b4-bcf9-a325b713fe92)|![CPE drawio (1)](https://github.com/user-attachments/assets/2507c175-738a-4372-8175-9c798b9057ba)|
+||![<img width="2630" height="1446" alt="PE drawio" src="https://github.com/user-attachments/assets/e9fa05ab-a745-4a88-ba70-6081d91e2b50" /> |  <img width="2288" height="1412" alt="CPE drawio" src="https://github.com/user-attachments/assets/dc12e1d3-968f-4b0e-b17f-1f34fc98e723" /> |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
 
