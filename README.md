@@ -8,7 +8,8 @@
 <img width="899" height="480" alt="image" src="https://github.com/user-attachments/assets/93cce10f-c370-4c9e-82a1-89f449db74be" />  
 
 ## Most Significant Runs (MSR) :  
-通常深度神經網絡模型使用32位元浮點數 (Floating Point) 運算進行訓練。訓練完成後可以獲得32位元的權重值。然而，為了減少計算資源和時間，深度神經網路通常使用定點數運算進行"推論計算"。而由於大部分的權重皆接近於0，因此我們把權重轉換成定點數時，如下圖所示，可以發現在高位元部分常常會有連續的1或是0，我們稱之為*Most Significant Runs (MSR)*。  
+通常深度神經網絡模型使用32位元浮點數 (Floating Point) 運算進行訓練。訓練完成後可以獲得32位元的權重值。然而，為了減少計算資源和時間，深度神經網路通常使用定點數運算進行"推論計算"。而由於大部分的權重皆接近於0，因此我們把權重轉換成定點數時，如下圖所示，可以發現在高位元部分常常會有連續的1或是0，我們稱之為*Most Significant Runs (MSR)*。 
+<img width="1799" height="406" alt="image" src="https://github.com/user-attachments/assets/867a0606-1c6f-4428-88ee-6a3e8b48d893" />
 
 ---
    
