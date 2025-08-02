@@ -84,6 +84,17 @@
 而Activation Memory也是，系統會在權重Pre-load完後加入Activation，我們可以進一步在最後一個權重Pre-load進來前，在負緣將Mem_Rd_en拉起，這樣在下一個Cycle，負緣拉起Cal，PE正緣讀到開始計算，就可以馬上輸出Activation給Buffer，加快速度。  
      
 <img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />  
+
+
+## Accuracy Analysis :  
+| **PE Type / Model**                                | **MLP**     | **LeNet**   | **ResNet**  | **AlexNet** |
+|:----------------------------------------------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+|**Original Precision (Float 32)**                                          | 98.08%      | 98.01%      | 99.61%      | 99.56%      |
+| **Quantization Precision (INT8)**                                             | 97.28%      | 97.97%      | 99.09%      | 99.45%      |
+| **Truncate 3 bits in MSR4 & Non-MSR4 Weight Data**                                      | 🟥 **92.71%** | 🟥 **89.20%** | 🟥 **11.36%** | 🟥 **19.27%** |
+|  **Add Expect Value (LSB = 1)**                                        | 97.29%      | 97.44%      | 98.96%      | 99.40%      |
+| **Add Expect Value (LSB = 1) & Non-MSR4 Compensation**                                      | 🟩 **97.34%** | 🟩 **98.00%** | 🟩 **98.96%** | 🟩 **99.40%** |
+
   
 
 
