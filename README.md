@@ -57,15 +57,17 @@
 ## Weight / Compensation / Activation Memory Structure :
 在這個專案裡，為了實作之便利性，我們對Memory的結構稍微做了一些調整，設定其一次會輸出8個地址的資料，實際上可以將這些單一塊的Memory看做是8個SRAM，一次輸出8筆資料。
 ![Memory drawio (1)](https://github.com/user-attachments/assets/7948d795-7941-4c81-9795-a97a43021b8e)
-  
-系統會在Mem_Write訊號Done之後，準備讀出Weight Memory and Compensation Memory的Weight Data pre-load到Systolic Array的PE裡面，因此，在Mem_Write結束的同時，我將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。
-  
+
+### Memory Read Control 
+系統會在Mem_Write訊號Done之後，準備讀出Weight Memory and Compensation Memory的Weight Data pre-load到Systolic Array的PE裡面  
+因此，在Mem_Write結束的同時，我將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。
+    
 <img width="1479" height="265" alt="image" src="https://github.com/user-attachments/assets/38a219e8-0829-4202-b606-5d9f348363e4" />   
     
 而Activation Memory也是，系統會在權重Pre-load完後加入Activation，我們可以進一步在最後一個權重Pre-load進來前，在負緣將Mem_Rd_en拉起，這樣在下一個Cycle，負緣拉起Cal，PE正緣讀到開始計算，就可以馬上輸出Activation給Buffer，加快速度。  
-   
+     
 <img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />  
-
+  
 
 
 
