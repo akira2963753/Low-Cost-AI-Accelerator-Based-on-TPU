@@ -47,7 +47,7 @@
 |:-----:|:---:|:------:|:------:|:-------:|
 | **Optimizer**           | Adam             | Adam             | Adam               | Adam               |
 | **Learning Rate**       | 0.0001           | 0.000055         | 0.001              | 0.001              |
-| **lr Scheduler**<br>(step_size / gamma) | -                | -                | 7 / 0.1            | 7 / 0.1            |
+| **lr Scheduler**<br>(**step_size / gamma**) | -                | -                | 7 / 0.1            | 7 / 0.1            |
 | **Loss Function**       | Cross Entropy Loss | Cross Entropy Loss | Cross Entropy Loss | Cross Entropy Loss |
 | **Regularization**      | -                | -                | **L2 (λ=1e-4)**  | **L2 (λ=1e-4)**  |
 | **Epochs / Batch Size** | 10 / 64          | 10 / 64          | 15 / 64            | 15 / 64            |
