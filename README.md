@@ -1,4 +1,4 @@
-# Low Cost AI Accelerator Based on TPU    
+![FSM drawio](https://github.com/user-attachments/assets/90c7fcfa-987d-4093-bb83-7ca8b3993cf1)# Low Cost AI Accelerator Based on TPU    
 
 ## Tensor Processing Unit (TPU) :
 <img width="1145" height="850" alt="image" src="https://github.com/user-attachments/assets/b0305d9b-6ab0-49fb-afa2-cb705ed8386a" />  
@@ -66,6 +66,9 @@
   
 由於左半邊的Shadow Array補償架構的計算速度一定會比右邊快上不少(只要3Cycle就可以計算完成)，因此，左半邊計算完的結果會先存入Accumulator，與右半邊共用，當右半邊的結果算完後，則會和補償結果相加得到正確的值，如下圖所示。  
 ![Acc drawio](https://github.com/user-attachments/assets/3f9eb4eb-a362-4aea-9439-404e5581edda)  
+
+## System FSM :  
+![FSM drawio](https://github.com/user-attachments/assets/d0238e3a-ff7f-47bb-9a16-2e0e58f2aab0)  
 
 
 ## RPE / CPE Structure :   
