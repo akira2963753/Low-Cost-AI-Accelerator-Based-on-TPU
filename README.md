@@ -65,12 +65,12 @@
 
 
 ## System FSM :  
-| ![FSM drawio](https://github.com/user-attachments/assets/d0238e3a-ff7f-47bb-9a16-2e0e58f2aab0)  | 由於本次專案設定系統會在開機時直接開始進行記憶體寫入，因此沒有IDLE狀態，初始狀態即是LOAD_MEM            |
+|  <img width="950" height="740" alt="FSM drawio" src="https://github.com/user-attachments/assets/3e833c6f-784e-4142-8a73-75b2e7fc4b48" /> | 由於本次專案設定系統會在開機時直接開始進行記憶體寫入，因此沒有IDLE狀態，初始狀態即是LOAD_MEM            |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
 
 ## RPE / CPE Structure :   
-|![<img width="2630" height="1446" alt="PE drawio" src="https://github.com/user-attachments/assets/e9fa05ab-a745-4a88-ba70-6081d91e2b50" /> |  <img width="2288" height="1412" alt="CPE drawio" src="https://github.com/user-attachments/assets/dc12e1d3-968f-4b0e-b17f-1f34fc98e723" /> |
+|<img width="2630" height="1446" alt="PE drawio" src="https://github.com/user-attachments/assets/e9fa05ab-a745-4a88-ba70-6081d91e2b50" /> |  <img width="2288" height="1412" alt="CPE drawio" src="https://github.com/user-attachments/assets/dc12e1d3-968f-4b0e-b17f-1f34fc98e723" /> |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
 
