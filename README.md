@@ -43,7 +43,15 @@
 此外，在訓練模型時，一些避免overfitting的方法，因為其會將權重分布縮小的特性，也有助於我們提高MSR-4%。  
 例如 : 降低學習率、L1 Regularization and L2 Regularization (Weight Decay)    
 以下是我們這次訓練的模型結構 :   
-...
+| **Model**               | **MLP**          | **LeNet**        | **ResNet**         | **AlexNet**        |
+|-------------------------|------------------|------------------|--------------------|--------------------|
+| **Optimizer**           | Adam             | Adam             | Adam               | Adam               |
+| **Learning Rate**       | 0.0001           | 0.000055         | 0.001              | 0.001              |
+| **lr Scheduler**<br>(step_size / gamma) | -                | -                | 7 / 0.1            | 7 / 0.1            |
+| **Loss Function**       | Cross Entropy Loss | Cross Entropy Loss | Cross Entropy Loss | Cross Entropy Loss |
+| **Regularization**      | -                | -                | **L2 (λ=1e-4)**  | **L2 (λ=1e-4)**  |
+| **Epochs / Batch Size** | 10 / 64          | 10 / 64          | 15 / 64            | 15 / 64            |
+
 
   
 ## Proposed TPU Architecture :   
