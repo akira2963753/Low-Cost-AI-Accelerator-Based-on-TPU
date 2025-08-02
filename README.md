@@ -5,7 +5,6 @@
 
 ## Data Flow :
 在本次專案中，我們採用的是Weight Sationary Data Flow來實現我們的TPU架構。  
-<img width="1712" height="646" alt="image" src="https://github.com/user-attachments/assets/85d88d2e-7649-4d30-91a9-e6081e57faa3" />  
 <img width="1664" height="877" alt="image" src="https://github.com/user-attachments/assets/c114ffd9-b225-458d-9e16-d64c49b8c25d" />   
   
 ## Most Significant Runs (MSR) :  
