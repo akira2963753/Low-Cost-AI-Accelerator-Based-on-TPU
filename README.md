@@ -1,15 +1,15 @@
 # Low Cost AI Accelerator Based on TPU    
 
 ## Tensor Processing Unit (TPU) :
-<img width="1162" height="846" alt="image" src="https://github.com/user-attachments/assets/604fc933-ea55-4d71-a662-cce4a31e20c5" /> 
+<img width="1116" height="839" alt="image" src="https://github.com/user-attachments/assets/47d3af4e-3567-4cf8-bcb4-d5f5aa79293b" />  
 
 ## Data Flow :
 在本次專案中，我們採用的是Weight Sationary Data Flow來實現我們的TPU架構。  
-<img width="899" height="480" alt="image" src="https://github.com/user-attachments/assets/93cce10f-c370-4c9e-82a1-89f449db74be" />  
+<img width="914" height="855" alt="image" src="https://github.com/user-attachments/assets/13453252-9fc3-4017-8a4b-3ba66549b6fd" />  
 
 ## Most Significant Runs (MSR) :  
 通常深度神經網絡模型使用32位元浮點數 (Floating Point) 運算進行訓練。訓練完成後可以獲得32位元的權重值。然而，為了減少計算資源和時間，深度神經網路通常使用定點數運算進行"推論計算"。而由於大部分的權重皆接近於0，因此我們把權重轉換成定點數時，如下圖所示，可以發現在高位元部分常常會有連續的1或是0，我們稱之為*Most Significant Runs (MSR)*。 
-<img width="1799" height="406" alt="image" src="https://github.com/user-attachments/assets/867a0606-1c6f-4428-88ee-6a3e8b48d893" />
+<img width="1793" height="406" alt="image" src="https://github.com/user-attachments/assets/6a8130fa-d0b0-4e50-abb6-fae3c1e7e34c" />  
 
 ---
    
@@ -58,28 +58,32 @@
   
 ## Proposed TPU Architecture :   
   
+<img width="4554" height="2192" alt="RPTPU drawio" src="https://github.com/user-attachments/assets/9252b519-17c7-4bc3-8771-d5a9be06d1d9" />  
+
+  
 以上是我們提出的TPU架構，我們會將輸入的權重資料透過WPU，判斷是否有MSR-4，如果有的話，就可以把前面的4個位元縮減成1個位元，並且將最後一個位元捨去，因為會在RPE內部計算時將LSB固定為1作為期望值補償，但需要再資料前面標示一個Shift Bit = 0，表示其為MSR-4資料。  
 而對於沒有MSR-4的資料，則是將前面四個位元保留，後面四個位元中的三個位元存入Compensation Memory，因為一樣CPE內部計算時會將LSB固定為1作為期望值補償，Shift Bit = 0，表示其為Non-MSR-4資料。   
   
 接著整個TPU會以Weight sationary data flow的方式，開始將權重和補償權重從各自的Memory中Pre-load到RPE以及CPE裡面，Pre-load結束後，Activation Memory會輸出Activation到Input Buffer以正45角的方法輸入到Systolic Array裡面。  
   
 由於左半邊的Shadow Array補償架構的計算速度一定會比右邊快上不少(只要3Cycle就可以計算完成)，因此，左半邊計算完的結果會先存入Accumulator，與右半邊共用，當右半邊的結果算完後，則會和補償結果相加得到正確的值，如下圖所示。  
-<img width="2584" height="854" alt="Acc drawio (1)" src="https://github.com/user-attachments/assets/6319cf36-4a1e-48d8-ae3d-8d4c7dbdca76" />
+  
+<img width="2584" height="854" alt="Acc drawio" src="https://github.com/user-attachments/assets/eceb0009-4f9f-4e60-abad-f00a223fcf31" />  
 
-
+  
 ## System FSM :  
 |  <img width="950" height="740" alt="FSM drawio" src="https://github.com/user-attachments/assets/3e833c6f-784e-4142-8a73-75b2e7fc4b48" /> | 由於本次專案設定系統會在開機時直接開始進行記憶體寫入，因此沒有IDLE狀態，初始狀態即是LOAD_MEM            |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
 
 ## RPE / CPE Structure :   
-|<img width="2630" height="1446" alt="PE drawio" src="https://github.com/user-attachments/assets/e9fa05ab-a745-4a88-ba70-6081d91e2b50" /> |  <img width="2288" height="1412" alt="CPE drawio" src="https://github.com/user-attachments/assets/dc12e1d3-968f-4b0e-b17f-1f34fc98e723" /> |
+| <img width="2630" height="1446" alt="PE drawio" src="https://github.com/user-attachments/assets/c13b90f2-0f2b-47ef-bc33-c8cd04cefd16" /> | <img width="2288" height="1412" alt="CPE drawio" src="https://github.com/user-attachments/assets/cdd3e260-c86d-4e87-9eaa-39a110822ab3" /> |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-
+  
 
 ## Weight / Compensation / Activation Memory Structure :
 在這個專案裡，為了實作之便利性，我們對Memory的結構稍微做了一些調整，設定其一次會輸出8個地址的資料，實際上可以將這些單一塊的Memory看做是8個SRAM，一次輸出8筆資料。
-<img width="3150" height="698" alt="Memory drawio" src="https://github.com/user-attachments/assets/5fc28a51-992c-4830-9ced-c8452065ad7d" />  
+<img width="3150" height="698" alt="Memory drawio" src="https://github.com/user-attachments/assets/bc47a240-fb7a-4a97-a1e6-861cafecec3e" />  
 
 ### Memory Read Control 
 系統會在Mem_Write訊號Done之後，準備讀出Weight Memory and Compensation Memory的Weight Data pre-load到Systolic Array的PE裡面。因此，在Mem_Write結束的同時，我將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。  
