@@ -44,7 +44,7 @@
 而對於沒有MSR-4的資料，則是將前面四個位元保留，後面四個位元中的三個位元存入Compensation Memory，因為一樣CPE內部計算時會將LSB固定為1作為期望值補償，Shift Bit = 0，表示其為Non-MSR-4資料。 
 
 ## Reduce Processing Element (RPE) :   
-![RPE drawio](https://github.com/user-attachments/assets/c790f418-5e94-47a2-b850-18127da7769d)
+![PE drawio](https://github.com/user-attachments/assets/474b9bbf-d862-48c1-92e9-63d23fe1acbd)
 
 ## Compensation Processing Element (CPE) :  
 ![CPE drawio (1)](https://github.com/user-attachments/assets/2507c175-738a-4372-8175-9c798b9057ba)
