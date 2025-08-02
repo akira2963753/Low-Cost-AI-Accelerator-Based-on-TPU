@@ -3,8 +3,8 @@
 ## Tensor Processing Unit (TPU) :
 <img width="1145" height="850" alt="image" src="https://github.com/user-attachments/assets/b0305d9b-6ab0-49fb-afa2-cb705ed8386a" />  
   
-## Weight-Stationary Data Flow :   
-<img width="873" height="852" alt="image" src="https://github.com/user-attachments/assets/3a5416f3-7d33-4128-ac29-bd67ccdf5ed0" />  
+## Data Flow :   
+<img width="1739" height="642" alt="image" src="https://github.com/user-attachments/assets/6cbc11d5-2b07-4a04-a15a-434a079c8222" />  
   
 ## Most Significant Runs (MSR) :  
 通常深度神經網絡模型使用32位元浮點數 (Floating Point) 運算進行訓練。訓練完成後可以獲得32位元的權重值。然而，為了減少計算資源和時間，深度神經網路通常使用定點數運算進行"推論計算"。而由於大部分的權重皆接近於0，因此我們把權重轉換成定點數時，如下圖所示，可以發現在高位元部分常常會有連續的1或是0，我們稱之為*Most Significant Runs (MSR)*。  
