@@ -59,9 +59,7 @@
 ![Memory drawio (1)](https://github.com/user-attachments/assets/7948d795-7941-4c81-9795-a97a43021b8e)
 
 ### Memory Read Control 
-系統會在Mem_Write訊號Done之後  
-準備讀出Weight Memory and Compensation Memory的Weight Data pre-load到Systolic Array的PE裡面  
-因此，在Mem_Write結束的同時，我將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。
+系統會在Mem_Write訊號Done之後，準備讀出Weight Memory and Compensation Memory的Weight Data pre-load到Systolic Array的PE裡面。因此，在Mem_Write結束的同時，我將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。  
     
 <img width="1479" height="265" alt="image" src="https://github.com/user-attachments/assets/38a219e8-0829-4202-b606-5d9f348363e4" />   
     
