@@ -61,6 +61,8 @@
 接著整個TPU會以Weight sationary data flow的方式，開始將權重和補償權重從各自的Memory中Pre-load到RPE以及CPE裡面，Pre-load結束後，Activation Memory會輸出Activation到Input Buffer以正45角的方法輸入到Systolic Array裡面。  
   
 由於左半邊的Shadow Array補償架構的計算速度一定會比右邊快上不少(只要3Cycle就可以計算完成)，因此，左半邊計算完的結果會先存入Accumulator，與右半邊共用，當右半邊的結果算完後，則會和補償結果相加得到正確的值，如下圖所示。  
+<img width="2584" height="854" alt="Acc drawio (1)" src="https://github.com/user-attachments/assets/6319cf36-4a1e-48d8-ae3d-8d4c7dbdca76" />
+
 
 ## System FSM :  
 | ![FSM drawio](https://github.com/user-attachments/assets/d0238e3a-ff7f-47bb-9a16-2e0e58f2aab0)  | 由於本次專案設定系統會在開機時直接開始進行記憶體寫入，因此沒有IDLE狀態，初始狀態即是LOAD_MEM            |
