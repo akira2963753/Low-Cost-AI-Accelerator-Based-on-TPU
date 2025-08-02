@@ -10,9 +10,7 @@
 ## Most Significant Runs (MSR) :  
 通常深度神經網絡模型使用32位元浮點數 (Floating Point) 運算進行訓練。訓練完成後可以獲得32位元的權重值。然而，為了減少計算資源和時間，深度神經網路通常使用定點數運算進行"推論計算"。而由於大部分的權重皆接近於0，因此我們把權重轉換成定點數時，如下圖所示，可以發現在高位元部分常常會有連續的1或是0，我們稱之為*Most Significant Runs (MSR)*。 
 <img width="1793" height="406" alt="image" src="https://github.com/user-attachments/assets/6a8130fa-d0b0-4e50-abb6-fae3c1e7e34c" />  
-
----
-   
+     
 我們接著去分析在不同深度神經網路模型中，MSR數目各自的占比，我們將模型的權重以定點數格式量化成INT8，可以發現幾乎99%都含有MSR-4，由於權重皆是小於0的數字，我們可以將MSR-4這四個位元縮減成一個位元來表示，這不僅可以縮短我們的計算成本、功耗，也能夠降低我們使用的記憶體空間。
 
 
@@ -25,10 +23,10 @@
 | MSR-7 | 40.4% |  27.3% | 85.5% | 84.3% |
 
 由上述可知，如果我們將有MSR-4的權重資料從8位元量化為5位元做計算，則沒有MSR-4的資料也必須要做截斷，這些截斷必定會帶來一些相對應的精確度損失...    
-如果我們不想要這些精準度損失，就必須要把被截斷的部分補償回來。  
+如果我們不想要這些精準度損失，就必須要把被截斷的部分補償回來。    
   
+    
   
-
 ## MSR-4 Analysis : 
 我們藉由去觀察訓練完的權重MSR-4的分布情形，發現每256個權重中，最差只會有2.9個是沒有MSR-4的權重資料。因此，對於256x256的Systolic Array來說，每個col我只需要3個row來做補償即可。  
 | Model         | MLP        | LeNet      | ResNet     | AlexNet    |
@@ -40,8 +38,8 @@
 | **Test Accuracy** | 98.08%     | 98.05%     | 99.61%     | 99.56%     |
 | **MSR-4 %**       | 99.98%     | 98.90%     | 99.61%     | 99.98%     |
 | **Non-MSR-4 / 256** | 0.1      | **2.9**  | 0.1        | 0.0        |
-
-
+   
+   
 此外，在訓練模型時，一些避免overfitting的方法，因為其會將權重分布縮小的特性，也有助於我們提高MSR-4%。  
 例如 : 降低學習率、L1 Regularization and L2 Regularization (Weight Decay)    
 以下是我們這次訓練的模型結構 :   
@@ -53,8 +51,7 @@
 | **Loss Function**       | Cross Entropy Loss | Cross Entropy Loss | Cross Entropy Loss | Cross Entropy Loss |
 | **Regularization**      | -                | -                | **L2 (λ=1e-4)**  | **L2 (λ=1e-4)**  |
 | **Epochs / Batch Size** | 10 / 64          | 10 / 64          | 15 / 64            | 15 / 64            |
-
-
+  
   
 ## Proposed TPU Architecture :   
   
