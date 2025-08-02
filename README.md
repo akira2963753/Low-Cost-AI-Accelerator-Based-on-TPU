@@ -47,7 +47,8 @@
 ![RPE drawio](https://github.com/user-attachments/assets/c790f418-5e94-47a2-b850-18127da7769d)
 
 ## Compensation Processing Element (CPE) :  
-![CPE drawio](https://github.com/user-attachments/assets/e12d8fac-3e1d-444b-9175-dcd8a724af95)
+![CPE drawio (1)](https://github.com/user-attachments/assets/2507c175-738a-4372-8175-9c798b9057ba)
+
 
 ## Weight , Compensation and Activation Memory Read :  
 系統會在Mem_Write訊號Done之後，準備讀出Weight Memory and Compensation Memory的Weight Data pre-load到Systolic Array的PE裡面，因此，在Mem_Write結束的同時，我將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。
