@@ -49,7 +49,7 @@
 ![Acc drawio](https://github.com/user-attachments/assets/3f9eb4eb-a362-4aea-9439-404e5581edda)
 
 
-## Reduce Processing Element (RPE) / Compensation Processing Element (CPE):   
+## RPE / CPE :   
 |![PE drawio (1)](https://github.com/user-attachments/assets/6d8220a3-97a1-43b4-bcf9-a325b713fe92)|![CPE drawio (1)](https://github.com/user-attachments/assets/2507c175-738a-4372-8175-9c798b9057ba)|
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
