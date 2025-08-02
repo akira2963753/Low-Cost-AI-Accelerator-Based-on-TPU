@@ -69,13 +69,7 @@
 由於左半邊的Shadow Array補償架構的計算速度一定會比右邊快上不少(只要3Cycle就可以計算完成)，因此，左半邊計算完的結果會先存入Accumulator，與右半邊共用，當右半邊的結果算完後，則會和補償結果相加得到正確的值，如下圖所示。  
   
 <img width="2584" height="854" alt="Acc drawio" src="https://github.com/user-attachments/assets/eceb0009-4f9f-4e60-abad-f00a223fcf31" />  
-
   
-## System FSM :  
-|  <img width="950" height="740" alt="FSM drawio" src="https://github.com/user-attachments/assets/3e833c6f-784e-4142-8a73-75b2e7fc4b48" /> | 由於本次專案設定系統會在開機時直接開始進行記憶體寫入，因此沒有IDLE狀態，初始狀態即是LOAD_MEM            |
-|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-
-
 ## RPE / CPE Structure :   
 | <img width="2630" height="1446" alt="PE drawio" src="https://github.com/user-attachments/assets/c13b90f2-0f2b-47ef-bc33-c8cd04cefd16" /> | <img width="2288" height="1412" alt="CPE drawio" src="https://github.com/user-attachments/assets/cdd3e260-c86d-4e87-9eaa-39a110822ab3" /> |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
