@@ -46,8 +46,7 @@
 接著整個TPU會以Weight-sationary data flow的方式，開始將權重和補償權重從各自的Memory中Pre-load到RPE以及CPE裡面，Pre-load結束後，Activation Memory會輸出Activation到Input Buffer以正45角的方法輸入到Systolic Array裡面。  
   
 由於左半邊的Shadow Array補償架構的計算速度一定會比右邊快上不少(只要3Cycle就可以計算完成)，因此，左半邊計算完的結果會先存入Accumulator，與右半邊共用，當右半邊的結果算完後，則會和補償結果相加得到正確的值，如下圖所示。  
-![Acc drawio](https://github.com/user-attachments/assets/3f9eb4eb-a362-4aea-9439-404e5581edda)
-<img width="1372" height="507" alt="Acc drawio" src="https://github.com/user-attachments/assets/d8e45e3d-6fea-45f0-ad1d-57c1081acf05" />
+![Acc drawio](https://github.com/user-attachments/assets/3f9eb4eb-a362-4aea-9439-404e5581edda)  
 
 
 ## RPE / CPE Structure :   
