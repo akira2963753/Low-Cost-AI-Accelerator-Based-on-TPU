@@ -29,7 +29,17 @@
 
 ## MSR-4 Analysis : 
 我們藉由去觀察訓練完的權重MSR-4的分布情形，發現每256個權重中，最差只會有2.9個是沒有MSR-4的權重資料。因此，對於256x256的Systolic Array來說，每個col我只需要3個row來做補償即可。  
-...
+| Model         | MLP        | LeNet      | ResNet     | AlexNet    |
+|---------------|------------|------------|------------|------------|
+| Layers (CONV/FC) | 3(0/3)     | 5(2/3)     | 17(16/1)   | 8(5/3)     |
+| Dataset       | MNIST      | MNIST      | MNIST      | MNIST      |
+| Input Dimensions | 28x28    | 28x28      | 28x28      | 28x28      |
+| Output Class  | 10         | 10         | 10         | 10         |
+| Test Accuracy | 98.08%     | 98.05%     | 99.61%     | 99.56%     |
+| **MSR-4 % & Non-MSR-4 per 256 weights (After Training)** |            |            |            |            |
+| MSR-4 %       | 99.98%     | 98.90%     | 99.61%     | 99.98%     |
+| Non-MSR-4 / 256 | 0.1      | **2.9** 🟧 | 0.1        | 0.0        |
+
 
 此外，在訓練模型時，一些避免overfitting的方法，因為其會將權重分布縮小的特性，也有助於我們提高MSR-4%。  
 例如 : 降低學習率、L1 Regularization and L2 Regularization (Weight Decay)    
