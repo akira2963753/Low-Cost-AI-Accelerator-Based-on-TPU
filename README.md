@@ -3,7 +3,7 @@
 ## Tensor Processing Unit (TPU) :
 <img width="1116" height="839" alt="image" src="https://github.com/user-attachments/assets/47d3af4e-3567-4cf8-bcb4-d5f5aa79293b" />  
 
-## Data Flow :
+## Data Flow (OS/WS/IS) :
 在本次專案中，我們採用的是Weight Sationary Data Flow來實現我們的TPU架構。  
 <img width="1664" height="877" alt="image" src="https://github.com/user-attachments/assets/c114ffd9-b225-458d-9e16-d64c49b8c25d" />   
   
