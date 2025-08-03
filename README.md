@@ -97,5 +97,7 @@
 
 以上是我們利用Pytorch做Post Training Quantization得到的數據，我們可知，當我們將模型量化成INT8時，精準度會下降大概0.1% ~ 1%左右，而當我們將Non-MSR-4截斷掉後，會發現模型的精準度下降的很快，這是因為雖然Non-MSR-4的比例只佔全部的1%左右，但對於參數比較大的ResNet、AlexNet來講卻會造成很嚴重的誤差，因此我們可以加上期望值補償，並套用以上所提出之補償架構，將損失補償回去，最後甚至在MLP、LeNet上達到比原本量化更好的精準度。  
 
+## Hardware Overhead Analysis :  
+... 
 
 
