@@ -92,7 +92,7 @@
 ## RTL Simulation :  
 ... 
 
-## Memory Read Control  : 
+## Memory Read Control : 
 系統會在Mem_Write訊號Done之後，準備讀出Weight Memory and Compensation Memory的Weight Data pre-load到Systolic Array的PE裡面。因此，在Mem_Write結束的同時，我將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。  
     
 <img width="1479" height="265" alt="image" src="https://github.com/user-attachments/assets/38a219e8-0829-4202-b606-5d9f348363e4" />   
@@ -100,6 +100,12 @@
 而Activation Memory也是，系統會在權重Pre-load完後加入Activation，我們可以進一步在最後一個權重Pre-load進來前，在負緣將Mem_Rd_en拉起，這樣在下一個Cycle，負緣拉起Cal，PE正緣讀到開始計算，就可以馬上輸出Activation給Buffer，加快速度。  
      
 <img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />  
+
+## 8 x 8 Systolic Array with 8 x 3 Compensation Array Simulation :  
+我們利用Python計算正確的結果並將RTL模擬的結果輸出至./RTL Source (Signed Operation)/Output.out上面，可以發現結果完全一致。  
+
+<img width="888" height="372" alt="image" src="https://github.com/user-attachments/assets/bcb49d35-67db-46d4-82fc-da65306aa883" />
+
 
 
 ## Accuracy Analysis :  
