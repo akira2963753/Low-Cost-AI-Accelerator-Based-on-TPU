@@ -69,7 +69,7 @@
   
 以上是我們提出的TPU架構，我們會將輸入的權重資料透過WPU，判斷是否有MSR-4，如果有的話，就可以把前面的4個位元縮減成1個位元，並且將最後一個位元捨去，因為會在RPE內部計算時將LSB固定為1作為期望值補償，但需要再資料前面標示一個Shift Bit = 0，表示其為MSR-4資料。  
 而對於沒有MSR-4的資料，則是將前面四個位元保留，後面四個位元中的三個位元存入Compensation Memory，因為一樣CPE內部計算時會將LSB固定為1作為期望值補償，Shift Bit = 0，表示其為Non-MSR-4資料。儲存的方式如下圖所示 :  
-<img width="1094" height="625" alt="Design_MSR drawio (1)" src="https://github.com/user-attachments/assets/6cde65dd-a3b4-45cb-91ec-33c52f61cb82" />
+<img width="1094" height="625" alt="Design_MSR drawio" src="https://github.com/user-attachments/assets/663b63df-6f85-4b69-9ea4-ce8b9653663e" />  
 
   
 接著整個TPU會以WS Data Flow的方式，開始將權重和補償權重從各自的Memory中Pre-load到RPE以及CPE裡面，Pre-load結束後，Activation Memory會輸出Activation到Input Buffer以正45角的方法輸入到Systolic Array裡面。  
