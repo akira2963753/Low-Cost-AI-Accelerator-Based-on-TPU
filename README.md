@@ -71,6 +71,9 @@
 而對於沒有MSR-4的資料，則是將前面四個位元保留，Shift Bit = 0，表示其為Non-MSR-4資料，而後面四個位元中的三個位元存入Compensation Memory，因為一樣CPE內部計算時會將LSB固定為1作為期望值補償。  
 儲存的方式如下圖所示 :  
 <img width="1092" height="578" alt="Design_MSR drawio (2)" src="https://github.com/user-attachments/assets/5194c597-240c-44f2-a7d5-b9c364e3732a" />
+計算的方式如下圖所示 :  
+<img width="844" height="511" alt="Cal drawio" src="https://github.com/user-attachments/assets/428784e0-665f-467f-bf8c-82e8db765173" />
+
 
   
 接著整個TPU會以WS Data Flow的方式，開始將權重和補償權重從各自的Memory中Pre-load到RPE以及CPE裡面，Pre-load結束後，Activation Memory會輸出Activation到Input Buffer以正45角的方法輸入到Systolic Array裡面。  
