@@ -4,7 +4,7 @@
 <img width="1116" height="839" alt="image" src="https://github.com/user-attachments/assets/47d3af4e-3567-4cf8-bcb4-d5f5aa79293b" />  
 
 ## Data Flow (OS/WS/IS) :
-在Systolic Array的資料流中，有三種主流的方法，分別是Ouput Staionary(OS), Weight Staionary(WS) and Input Stationay(IS) Data Flow.
+在Systolic Array的資料流中，有三種主流資料流的方式，分別是Ouput Staionary(OS), Weight Staionary(WS) and Input Stationay(IS) Data Flow.  
 <img width="1846" height="722" alt="image" src="https://github.com/user-attachments/assets/c6f07320-1c2e-4bca-9610-6f9131aaee00" />
   
 我們採用的是Weight Staionary (WS) Data Flow來實現我們的TPU架構。  
