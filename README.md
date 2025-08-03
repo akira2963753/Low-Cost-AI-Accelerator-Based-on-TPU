@@ -1,16 +1,16 @@
 # Low Cost AI Accelerator Based on TPU    
 
-## Tensor Processing Unit (TPU) :
+## Tensor Processing Unit (TPU) [1] :
 <img width="1116" height="839" alt="image" src="https://github.com/user-attachments/assets/47d3af4e-3567-4cf8-bcb4-d5f5aa79293b" />  
 
-## Data Flow (OS/WS/IS) :
+## Data Flow (OS/WS/IS) [2][3] :
 在Systolic Array的資料流中，有三種主流資料流的方式，分別是Ouput Staionary(OS), Weight Staionary(WS) and Input Stationay(IS) Data Flow.  
 <img width="1846" height="722" alt="image" src="https://github.com/user-attachments/assets/c6f07320-1c2e-4bca-9610-6f9131aaee00" />
   
 我們採用的是Weight Staionary (WS) Data Flow來實現我們的TPU架構。  
 <img width="1664" height="877" alt="image" src="https://github.com/user-attachments/assets/c114ffd9-b225-458d-9e16-d64c49b8c25d" />   
   
-## Most Significant Runs (MSR) :  
+## Most Significant Runs (MSR) [4] :  
 通常深度神經網絡模型使用32位元浮點數 (Floating Point) 運算進行訓練。訓練完成後可以獲得32位元的權重值。然而，為了減少計算資源和時間，深度神經網路通常使用定點數運算進行"推論計算"。而由於大部分的權重皆接近於0，因此我們把權重轉換成定點數時，如下圖所示，可以發現在高位元部分常常會有連續的1或是0，我們稱之為*Most Significant Runs (MSR)*。 
 <img width="1793" height="406" alt="image" src="https://github.com/user-attachments/assets/6a8130fa-d0b0-4e50-abb6-fae3c1e7e34c" />   
   
@@ -114,6 +114,13 @@
 ... 
 
 
-## REFERENCES : 
+## Reference :  
+[1] In-Datacenter Performance Analysis of a Tensor Processing Unit   
+[2] SCALE-Sim: Systolic CNN Accelerator Simulator  
+[3]
+[4] Refresh Power Reduction of DRAMs in DNN Systems Using Hybrid Voting and ECC Method  
+[5] Weight-Aware and Reduced-Precision Architecture Designs for Low-Cost AI Accelerators   
+[6] DRUM: A Dynamic Range Unbiased Multiplier for approximate applications  
+[7] APTPU: Approximate Computing Based Tensor Processing Unit  
 
 
