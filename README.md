@@ -109,7 +109,7 @@
 
 ### Activation Function (ReLU Function) :  
 在本次專案實作中，我們的Activation Function採用的是ReLU Function，將剛剛Systolic Array得到的值，經過ReLU後送入到Unified Buffer。    
-| <img width="1203" height="893" alt="image" src="https://github.com/user-attachments/assets/14283b26-61a8-4405-92f1-b9ddc122e373" /> | <img width="1174" height="152" alt="image" src="https://github.com/user-attachments/assets/af08e56f-92c6-4a60-959c-07a12a93e472" /> | 
+| <img width="1203" height="893" alt="image" src="https://github.com/user-attachments/assets/14283b26-61a8-4405-92f1-b9ddc122e373" /> | <img width="691" height="418" alt="image" src="https://github.com/user-attachments/assets/518886f9-b37d-40ff-8441-1b74be43fe0f" /> | 
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
 
