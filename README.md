@@ -1,7 +1,7 @@
 # Low Cost AI Accelerator Based on TPU    
 #### Development Environment :  
-| RTL Simulator : *ModelSim-Intel FPGA Standard Edition, Version 20.1.1, windows*
-| Synthesis Tool : *Synopsys Design Compiler*
+- RTL Simulator : *ModelSim-Intel FPGA Standard Edition, Version 20.1.1, windows*  
+- Synthesis Tool : *Synopsys Design Compiler*  
 
 ## Tensor Processing Unit (TPU) [1] :  
 <img width="1116" height="839" alt="image" src="https://github.com/user-attachments/assets/47d3af4e-3567-4cf8-bcb4-d5f5aa79293b" />   
