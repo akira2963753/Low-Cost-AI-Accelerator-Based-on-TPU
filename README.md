@@ -103,14 +103,14 @@
 
 ## 8 x 8 Systolic Array with 8 x 3 Compensation Array Simulation :  
 
-### Activation Function (ReLU Function) :  
-<img width="1055" height="614" alt="image" src="https://github.com/user-attachments/assets/81d2d8c0-a374-4a0f-9fd6-4599b3911f4b" />  
-在本次專案實作中，我們的Activation Function採用的是ReLU Function，他會幫我們將負的值轉化為0，然後再送入到Unified Buffer。  
-
-
 ### Answer Check  
 我們利用Python計算正確的結果並將RTL模擬的結果輸出至[Output.out](./RTL_Signed(Main)/Output.out)上面，可以發現結果完全一致。      
 <img width="888" height="372" alt="image" src="https://github.com/user-attachments/assets/bcb49d35-67db-46d4-82fc-da65306aa883" />
+
+### Activation Function (ReLU Function) :  
+在本次專案實作中，我們的Activation Function採用的是ReLU Function，將剛剛Systolic Array得到的值，經過ReLU後送入到Unified Buffer。    
+| <img width="1203" height="893" alt="image" src="https://github.com/user-attachments/assets/14283b26-61a8-4405-92f1-b9ddc122e373" /> | <img width="1174" height="152" alt="image" src="https://github.com/user-attachments/assets/af08e56f-92c6-4a60-959c-07a12a93e472" /> | 
+|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
 
 
