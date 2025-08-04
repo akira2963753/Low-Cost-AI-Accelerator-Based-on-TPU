@@ -1,7 +1,7 @@
 # Low Cost AI Accelerator Based on TPU   
-###### This is my senior project in NTUST,EE.    
-###### This GitHub repository is provided for reference purposes only.  
-###### If you encounter any issues, feel free to contact "harry2963753@gmail.com".  
+This is my senior project in NTUST,EE.    
+This GitHub repository is provided for reference purposes only.  
+If you encounter any issues, feel free to contact "harry2963753@gmail.com".  
 
 ### Development Environment :  
 - RTL Simulator : *ModelSim-Intel FPGA Standard Edition, Version 20.1.1, windows*  
