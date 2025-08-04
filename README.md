@@ -1,6 +1,7 @@
 # Low Cost AI Accelerator Based on TPU    
 ...  
-## Tensor Processing Unit (TPU) [1] :
+## Tensor Processing Unit (TPU) [1] :  
+TPU (Tensor Processing Unit) 是 Google 專為機器學習工作負載設計的定制化 AI 晶片，採用大規模並行的脈動陣列架構來執行矩陣乘法，能同時處理大量數據，並針對神經網路的張量計算進行優化，比通用 GPU 更高效。此外，TPU 支援 8位元整數運算，在保持準確度的同時大幅提升運算速度和能效。   
 <img width="1116" height="839" alt="image" src="https://github.com/user-attachments/assets/47d3af4e-3567-4cf8-bcb4-d5f5aa79293b" />  
 
 ## Data Flow (OS/WS/IS) [2] [3] :
