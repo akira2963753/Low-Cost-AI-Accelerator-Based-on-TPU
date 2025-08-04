@@ -102,7 +102,8 @@
 <img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />  
 
 ## RTL Simulation :  
-### 8 x 8 Systolic Array with 8 x 3 Compensation Array Simulation  
+我們實現了上述架構的 8x8 Systolic Array with 8 x 3 Compensation Array，並進行電路模擬。  
+  
 ### Answer Check  
 我們利用Python計算正確的結果並將RTL模擬的結果輸出至[Output.out](./RTL_Signed(Main)/Output.out)上面，可以發現結果完全一致。      
 <img width="888" height="372" alt="image" src="https://github.com/user-attachments/assets/bcb49d35-67db-46d4-82fc-da65306aa883" />
