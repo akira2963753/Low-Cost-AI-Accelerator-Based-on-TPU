@@ -140,12 +140,12 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 ... 
 
 ## Reference :  
-[1] In-Datacenter Performance Analysis of a Tensor Processing Unit   
-[2] SCALE-Sim: Systolic CNN Accelerator Simulator  
-[3]
-[4] Refresh Power Reduction of DRAMs in DNN Systems Using Hybrid Voting and ECC Method  
-[5] Weight-Aware and Reduced-Precision Architecture Designs for Low-Cost AI Accelerators   
-[6] DRUM: A Dynamic Range Unbiased Multiplier for approximate applications  
-[7] APTPU: Approximate Computing Based Tensor Processing Unit  
+**[1] In-Datacenter Performance Analysis of a Tensor Processing Unit**     
+**[2] SCALE-Sim: Systolic CNN Accelerator Simulator**    
+**[3] Effective_Runtime_Fault_Detection_for_DNN_Accelerators**  
+**[4] Refresh Power Reduction of DRAMs in DNN Systems Using Hybrid Voting and ECC Method**   
+**[5] Weight-Aware and Reduced-Precision Architecture Designs for Low-Cost AI Accelerators**    
+**[6] DRUM: A Dynamic Range Unbiased Multiplier for approximate applications**   
+**[7] APTPU: Approximate Computing Based Tensor Processing Unit**   
 
 
