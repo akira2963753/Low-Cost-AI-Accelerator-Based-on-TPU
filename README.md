@@ -73,7 +73,8 @@
 |<img width="1092" height="578" alt="Design_MSR drawio (2)" src="https://github.com/user-attachments/assets/48697522-db78-4900-a01a-946885f3f35f" /> | <img width="844" height="512" alt="Cal drawio (1)" src="https://github.com/user-attachments/assets/1f6684f6-ed29-429c-8a5d-066877dd4b65" /> | 
 |-----------------------------------------------|-------------------------------|
 
-值得注意的是 : 如果要進行有號數的運算的話，我們必須將Compensation Weight多一個Sign Bit(根據他原來的Weight Data的正負號)。  
+值得注意的是 : 如果要進行有號數的運算的話，我們必須將Compensation Weight多一個Sign Bit    
+(根據他原來的Weight Data的正負號)  
 
 ---  
 接著整個TPU會以WS Data Flow的方式，開始將權重和補償權重從各自的Memory中Pre-load到RPE以及CPE裡面，Pre-load結束後，Activation Memory會輸出Activation到Input Buffer以正45角的方法輸入到Systolic Array裡面。  
