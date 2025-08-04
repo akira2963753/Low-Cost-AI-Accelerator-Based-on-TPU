@@ -2,7 +2,7 @@
 This GitHub repository is provided for reference purposes only.   
 If you encounter any issues, feel free to contact "harry2963753@gmail.com".  
   
-#### Development Environment :  
+### Development Environment :  
 - RTL Simulator : *ModelSim-Intel FPGA Standard Edition, Version 20.1.1, windows*  
 - Synthesis Tool : *Synopsys Design Compiler*
 - Model Training : *Pytorch*  
