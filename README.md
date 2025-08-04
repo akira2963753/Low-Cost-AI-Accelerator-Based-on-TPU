@@ -1,6 +1,6 @@
 # Low Cost AI Accelerator Based on TPU   
 ###### This is my senior project in NTUST,EE.    
-###### The code in this GitHub repository is provided for reference purposes only.  
+###### This GitHub repository is provided for reference purposes only.  
 ###### If you encounter any issues, feel free to contact "harry2963753@gmail.com".  
 
 ### Development Environment :  
