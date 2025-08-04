@@ -104,7 +104,8 @@
 ## 8 x 8 Systolic Array with 8 x 3 Compensation Array Simulation :  
 
 ### Activation Function (ReLU Function) :  
-在本次專案實作中，我們的Activation Function採用的是ReLU Function，他會幫我們將負的直轉化為0，然後再送入到Unified Buffer。  
+<img width="1055" height="614" alt="image" src="https://github.com/user-attachments/assets/81d2d8c0-a374-4a0f-9fd6-4599b3911f4b" />  
+在本次專案實作中，我們的Activation Function採用的是ReLU Function，他會幫我們將負的值轉化為0，然後再送入到Unified Buffer。  
 
 
 ### Answer Check  
