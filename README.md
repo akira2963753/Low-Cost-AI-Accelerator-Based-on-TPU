@@ -72,8 +72,10 @@
 儲存和計算的方式如下圖所示 :    
 |<img width="1092" height="578" alt="Design_MSR drawio (2)" src="https://github.com/user-attachments/assets/48697522-db78-4900-a01a-946885f3f35f" /> | <img width="844" height="512" alt="Cal drawio (1)" src="https://github.com/user-attachments/assets/1f6684f6-ed29-429c-8a5d-066877dd4b65" /> | 
 |-----------------------------------------------|-------------------------------|
-! 值得注意的是 : 如果要進行有號數的運算的話，我們必須將Compensation Weight多一個Sign Bit(根據他原來的Weight Data的正負號)。  
-  
+
+值得注意的是 : 如果要進行有號數的運算的話，我們必須將Compensation Weight多一個Sign Bit(根據他原來的Weight Data的正負號)。  
+
+---  
 接著整個TPU會以WS Data Flow的方式，開始將權重和補償權重從各自的Memory中Pre-load到RPE以及CPE裡面，Pre-load結束後，Activation Memory會輸出Activation到Input Buffer以正45角的方法輸入到Systolic Array裡面。  
   
 由於左半邊的Shadow Array補償架構的計算速度一定會比右邊快上不少(只要3Cycle就可以計算完成)，因此，左半邊計算完的結果會先存入Accumulator，寫入至他要補償的地址。藉由與右半邊共用，這樣可以省下許多硬體面積，不用在為Compensation的部分設計一塊Accumulator，當右半邊的結果算完後，則會和補償結果相加得到正確的值，如下圖所示。    
