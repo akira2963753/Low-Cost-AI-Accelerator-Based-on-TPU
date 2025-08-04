@@ -109,8 +109,8 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 <img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />    
 
 ## RTL Simulation :  
-我們實現了上述架構的 8x8 Systolic Array with 8 x 3 Compensation Array，並進行電路模擬。  
-詳細RTL可以參考[RTL Source](./RTL_Signed(Main))  
+我們實現了上述TPU架構，以8x8 Systolic Array with 8 x 3 Compensation Arra來進行電路模擬。  
+詳細RTL可以參考[RTL Source](./RTL_Signed(Main))   
   
 ### Answer Check  
 我們利用Python計算正確的結果並將RTL模擬的結果輸出至[Output.out](./RTL_Signed(Main)/Output.out)上面，可以發現結果完全一致。      
