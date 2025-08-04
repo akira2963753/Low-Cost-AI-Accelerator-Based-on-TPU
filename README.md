@@ -92,12 +92,12 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
   
 <img width="2584" height="854" alt="Acc drawio" src="https://github.com/user-attachments/assets/eceb0009-4f9f-4e60-abad-f00a223fcf31" />  
   
-## RPE / CPE Structure :   
+## RPE / CPE Architecture :   
 | <img width="2630" height="1446" alt="PE drawio" src="https://github.com/user-attachments/assets/c13b90f2-0f2b-47ef-bc33-c8cd04cefd16" /> | <img width="2288" height="1412" alt="CPE drawio" src="https://github.com/user-attachments/assets/cdd3e260-c86d-4e87-9eaa-39a110822ab3" /> |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
   
 
-## Weight / Compensation / Activation Memory Structure :
+## Weight / Compensation / Activation Memory Architecture :
 在這個專案裡，為了實作之便利性，我們對Memory的結構稍微做了一些調整，設定其一次會輸出8個地址的資料，實際上可以將這些單一塊的Memory看做是8個SRAM，一次輸出8筆資料。
 <img width="3150" height="698" alt="Memory drawio" src="https://github.com/user-attachments/assets/bc47a240-fb7a-4a97-a1e6-861cafecec3e" />  
 
