@@ -148,7 +148,7 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 
 
 
-### Other Module  
+### Each Module  
 
 |Module|WPU|Input Buffer|Weight_Mem|Activation_Mem|Compensation_Mem|Accumulator|Activation_Function|Systolic Array|
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
