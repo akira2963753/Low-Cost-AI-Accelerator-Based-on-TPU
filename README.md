@@ -138,7 +138,7 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 ### PE Comparison  
 |Type of PE|PE|RPE|CPE|
 |:--:|:--:|:--:|:--:|
-|Area| 1x | 0.77x | 0.43x |
+|Area(um^2)| (4018) 1x | (3118) 0.77x | (1712) 0.43x |
 |Power| 1x | 0.77x | 0.38x |  
 
 ### Input Buffer Comparison  
