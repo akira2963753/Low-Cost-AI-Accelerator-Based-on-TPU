@@ -138,14 +138,19 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 ### PE Comparison  
 |Type of PE|PE|RPE|CPE|
 |:--:|:--:|:--:|:--:|
-|Area(um<sup>2</sup>)| (4018) 1x | (3118) 0.77x | (1712) 0.43x |
+|Area (um<sup>2</sup>)| 4018 [1x] | 3118 [0.77x] | 1712 [0.43x] |
 |Power| 1x | 0.77x | 0.38x |  
 
 ### Input Buffer Comparison  
 |Type|Original Input Buffer|Input Buffer|
 |:--:|:--:|:--:|
-|Area(um<sup>2</sup>)| 8101 (1x) | 17711 (2.19x) |
+|Area (um<sup>2</sup>)| 8101 [1x] | 17711 [2.19x] |
 
+### Other Module  
+
+|Module|WPU|Input Buffer|Weight_Mem|Activation_Mem|Compensation_Mem|Accumulator|Activation_Function|Systolic Array|
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|Area (um<sup>2</sup>)| 1187 | 17711 | 8743 | 12345 | 4578 | 17781 | 256 | | 
 
 ## Reference :  
 **[1] In-Datacenter Performance Analysis of a Tensor Processing Unit**     
