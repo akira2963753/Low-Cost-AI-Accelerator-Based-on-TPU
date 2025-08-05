@@ -141,6 +141,11 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 |Area| 1x | 0.77x | 0.43x |
 |Power| 1x | 0.77x | 0.38x |  
 
+### Input Buffer Comparison  
+|Type|Original Input Buffer|Input Buffer|
+|:--:|:--:|:--:|
+|Area| 1x | 2.19x |
+
 
 ## Reference :  
 **[1] In-Datacenter Performance Analysis of a Tensor Processing Unit**     
