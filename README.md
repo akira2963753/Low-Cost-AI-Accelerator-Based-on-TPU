@@ -150,9 +150,17 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 
 ### Each Module  
 
-|Module|WPU|Input Buffer|Weight_Mem|Activation_Mem|Compensation_Mem|Accumulator|Activation_Function|Systolic Array|
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|Area | 1187 | 17711 | 8743 | 12345 | 4578 | 17781 | 256 | | 
+|Module|Area|
+|:--:|:--:|
+|Weight Memory| |
+|Activation Memory| |
+|Compensation Memory| | 
+|Input Buffer| |
+|WPU||
+|8 x 8 Systolic Array| 64.5 % |
+|Accumulator||
+|Activation Function||
+
 
 ## Reference :  
 **[1] In-Datacenter Performance Analysis of a Tensor Processing Unit**     
