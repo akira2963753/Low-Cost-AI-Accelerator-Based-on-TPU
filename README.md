@@ -152,9 +152,9 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 
 |Module|Area Percnetage (%)| Memory Size |
 |:--:|:--:|:--:|
-|**Weight Memory**| 2.83% | 40B |
-|**Activation Memory**| 4% | 56B |
-|**Compensation Memory**| 1.48% | 12B | 
+|**Weight Memory**| 2.83% | 40-Byte |
+|**Activation Memory**| 4% | 56-Byte |
+|**Compensation Memory**| 1.48% | 12-Byte | 
 |**Input Buffer**| 5.73% | - |
 |**WPU**| 0.38% | - |
 |**8 x 8 Systolic Array**| 64.5% | - |
