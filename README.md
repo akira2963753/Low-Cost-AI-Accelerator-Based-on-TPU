@@ -152,7 +152,7 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 
 |Module|WPU|Input Buffer|Weight_Mem|Activation_Mem|Compensation_Mem|Accumulator|Activation_Function|Systolic Array|
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|Area (um<sup>2</sup>)| 1187 | 17711 | 8743 | 12345 | 4578 | 17781 | 256 | | 
+|Area | 1187 | 17711 | 8743 | 12345 | 4578 | 17781 | 256 | | 
 
 ## Reference :  
 **[1] In-Datacenter Performance Analysis of a Tensor Processing Unit**     
