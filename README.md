@@ -146,6 +146,8 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 |:--:|:--:|:--:|
 |Area (um<sup>2</sup>)| 8101 [1x] | 17711 [2.19x] |
 
+
+
 ### Other Module  
 
 |Module|WPU|Input Buffer|Weight_Mem|Activation_Mem|Compensation_Mem|Accumulator|Activation_Function|Systolic Array|
