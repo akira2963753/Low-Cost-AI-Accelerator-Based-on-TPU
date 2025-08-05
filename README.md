@@ -150,16 +150,16 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 
 ### Each Module  
 
-|Module|Area|
-|:--:|:--:|
-|**Weight Memory**| |
-|**Activation Memory**| |
-|**Compensation Memory**| | 
-|**Input Buffer**| |
-|**WPU**||
-|**8 x 8 Systolic Array**| 64.5 % |
-|**Accumulator**||
-|**Activation Function**||
+|Module|Area Percnetage (%)| Memory Size |
+|:--:|:--:|:--:|
+|**Weight Memory**| 2.83% | 40B |
+|**Activation Memory**| 4% | 56B |
+|**Compensation Memory**| 1.48% | 12B | 
+|**Input Buffer**| 5.73% | - |
+|**WPU**| 0.38% | - |
+|**8 x 8 Systolic Array**| 64.5% | - |
+|**Accumulator**| 21.8% | - |
+|**Activation Function**| 0.21% | - |
 
 
 ## Reference :  
