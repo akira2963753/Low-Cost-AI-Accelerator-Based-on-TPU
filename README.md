@@ -152,14 +152,14 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 
 |Module|Area|
 |:--:|:--:|
-|Weight Memory| |
-|Activation Memory| |
-|Compensation Memory| | 
-|Input Buffer| |
-|WPU||
-|8 x 8 Systolic Array| 64.5 % |
-|Accumulator||
-|Activation Function||
+|**Weight Memory**| |
+|**Activation Memory**| |
+|**Compensation Memory**| | 
+|**Input Buffer**| |
+|**WPU**||
+|**8 x 8 Systolic Array**| 64.5 % |
+|**Accumulator**||
+|**Activation Function**||
 
 
 ## Reference :  
