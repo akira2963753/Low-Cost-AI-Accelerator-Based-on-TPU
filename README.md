@@ -136,10 +136,12 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 
 ## Hardware Overhead Analysis :  
 ### PE Comparison  
+我們對每種PE皆使用最基礎以HA和FA來搭建而成的乘法單元，以確保公平之比較。    
+以下是我們有號數的PE做Synthesis所得的硬體面積大小比較  :  
 |Type of PE|PE|RPE|CPE|
 |:--:|:--:|:--:|:--:|
-|Area | 1x | 0.77x | 0.43x |
-|Power| 1x | 0.77x | 0.38x |  
+|Area | 0% | -13.2% | -33.4% |
+每個RPE相比其原來的PE來說約少了357 gate count。  
 
 ### Input Buffer Comparison  
 |Type|Original Input Buffer|Input Buffer|
