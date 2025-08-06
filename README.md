@@ -149,21 +149,22 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 |:--:|:--:|:--:|
 |Area | 1x | 2.19x |
 
-
-
 ### Each Module  
 
-|Module|Area Percnetage (%)|
-|:--:|:--:|
-|**Weight Memory**| 2.83% |
-|**Activation Memory**| 4% |
-|**Compensation Memory**| 1.48% |
-|**Input Buffer**| 5.73% | 
-|**WPU**| 0.38% | 
-|**Systolic Array**| 64.5% | 
-|**Accumulator**| 21.8% | 
-|**Activation Function**| 0.21% | 
-|**Compensation Array**|  | 
+|Module|Area Percnetage (%)| Gate Count |
+|:--:|:--:|:--:|
+|**Weight Memory**| 1.8% |
+|**Activation Memory**| 2.5% |
+|**Compensation Memory**| 1.0% |
+|**Input Buffer**| 6.0% |
+|**TPU System Controller**| 0.3% |
+|**Unified Buffer**| 19.5% | 
+|**WPU**| 0.2% | 
+|**Systolic Array**| 75% | 
+|**Accumulator**| 14.1% | 
+|**Activation Function**| 0.1% | 
+|**Compensation Array**| 18% | 
+
 
 
 ## Reference :  
