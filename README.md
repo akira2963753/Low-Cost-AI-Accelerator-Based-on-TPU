@@ -141,6 +141,7 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 |Type of PE|PE|RPE|CPE|
 |:--:|:--:|:--:|:--:|
 |Area | 0% | -13.2% | -33.4% |
+  
 每個RPE相比其原來的PE來說約少了357 gate count。  
 
 ### Input Buffer Comparison  
