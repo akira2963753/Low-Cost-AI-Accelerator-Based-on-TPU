@@ -150,17 +150,17 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com.
 
 ### Each Module  
 
-|Module|Area Percnetage (%)| Memory Size |
-|:--:|:--:|:--:|
-|**Weight Memory**| 2.83% | 40-Byte |
-|**Activation Memory**| 4% | 56-Byte |
-|**Compensation Memory**| 1.48% | 12-Byte | 
-|**Input Buffer**| 5.73% | - |
-|**WPU**| 0.38% | - |
-|**Systolic Array**| 64.5% | - |
-|**Accumulator**| 21.8% | - |
-|**Activation Function**| 0.21% | - |
-|**Compensation Array**|  | - |
+|Module|Area Percnetage (%)|
+|:--:|:--:|
+|**Weight Memory**| 2.83% |
+|**Activation Memory**| 4% |
+|**Compensation Memory**| 1.48% |
+|**Input Buffer**| 5.73% | 
+|**WPU**| 0.38% | 
+|**Systolic Array**| 64.5% | 
+|**Accumulator**| 21.8% | 
+|**Activation Function**| 0.21% | 
+|**Compensation Array**|  | 
 
 
 ## Reference :  
