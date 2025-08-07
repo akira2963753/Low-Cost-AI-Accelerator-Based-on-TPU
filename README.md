@@ -153,14 +153,14 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 
 |Module|Area Percnetage (%)| Gate Count |
 |:--:|:--:|:--:|
-|**Weight Memory**| 1.9% |  |
+|**Weight Memory**| 1.9% | 3500 |
 |**Activation Memory**| 2.6% |  4800  |
-|**Compensation Memory**| 1.0% |
-|**Input Buffer**| 5.8% |
-|**TPU System Controller**| 0.3% |
+|**Compensation Memory**| 1.0% | 1830 |
+|**Input Buffer**| 5.8% | 10586 |
+|**TPU System Controller**| 0.3% | 324 |
 |**Unified Buffer**|  |  |
-|**WPU**| 0.2% | 
-|**Systolic Array**| 75% | 
+|**WPU**| 0.2% | 385 |
+|**Systolic Array**| 75% |   |
 |**Accumulator**| 14% | 25450 |
 |**Activation Function**| 0.1% | 191 | 
 |**Compensation Array**| 18% | 
