@@ -139,6 +139,7 @@ Below is the hardware area comparison obtained from synthesizing the signed-vers
 |Area | 0% | -13.2% | -33.4% | 
   
 Each RPE contains approximately 357 fewer gates compared to its original PE counterpart.  
+For a 256x256 Systolic Array, we overall reduce about -11.2% (-13.2% + (66.6%/32) )  
 
 ### Input Buffer Comparison  
 |Type|Original Input Buffer|Input Buffer|
