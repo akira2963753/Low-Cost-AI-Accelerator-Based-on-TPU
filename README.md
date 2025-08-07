@@ -157,10 +157,11 @@ Input Buffer會比原來還要多出約3571個Gate
 對於一個256x256的Systolic Array來說，他會需要256x3的Compensation Array  
 因此我們可以來計算整個Systolic Array的Hardware Overhead :    
 -357x256x256 (Reduced Systolic Array) + 1671x256x3 (Extra Compensation Array) = -22113024 Gate   
-因此就算我們加入了補償陣列，我們還是可以比原來的Systolic Array還小。  
-接著我們考慮上Input Buffer (轉換成256x256) = +3571 x 32 = +114272 Gate  
+接著我們考慮上Input Buffer (轉換成256x256) = +3571 x 32 = +114272 Gate 
 
 Total :  -22113024 + 114272 = -21998752 Gate
+因此就算我們加入了補償陣列，我們還是可以比原來的Systolic Array還小。  
+
 
 至於Compensation Memory的增加和Weight Memory、Activation Memory的減少，這個部分暫時不納入討論。  
 Weight Memory 可以縮小約 3/8，而 Activation Memory 可以縮小約 1/8。  
