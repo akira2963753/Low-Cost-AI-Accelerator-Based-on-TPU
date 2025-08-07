@@ -108,7 +108,7 @@ After the Mem_Write signal is asserted and completed, the system prepares to rea
 We use 8x8 Systolic Array and 8x3 Compensation Array to simulate the proposed architecture.  
 
 ### Answer Check   
-We use Pytohn to check the answer, the result in [Output.out](./Source/Output.out)  
+We use Pytohn to check the answer, the result in [output.out](./Source/Output.out)  
 <img width="888" height="372" alt="image" src="https://github.com/user-attachments/assets/bcb49d35-67db-46d4-82fc-da65306aa883" />
 
 ### Activation Function (ReLU Function) :  
