@@ -151,6 +151,7 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 
 Input Buffer會比原來還要多出約3571個Gate  
 
+# 
 
 我們來詳細分析一下整體的硬體開銷減少了多少 :  
 對於一個256x256的Systolic Array來說，他會需要256x3的Compensation Array  
