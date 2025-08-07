@@ -77,48 +77,43 @@ Below is the architecture of the model used in our training :
 <img width="4554" height="2192" alt="RPTPU drawio" src="https://github.com/user-attachments/assets/9252b519-17c7-4bc3-8771-d5a9be06d1d9" />  
 
   
-以上是我們提出的TPU架構，我們會將輸入的權重資料透過WPU，判斷是否有MSR-4，如果有的話，就可以把前面的4個位元縮減成1個位元，並且將最後一個位元捨去，因為會在RPE內部計算時將LSB固定為1作為期望值補償，但需要再資料前面標示一個Shift Bit = 0，表示其為MSR-4資料。  
-而對於沒有MSR-4的資料，則是將前面四個位元保留，Shift Bit = 0，表示其為Non-MSR-4資料，而後面四個位元中的三個位元存入Compensation Memory，因為一樣CPE內部計算時會將LSB固定為1作為期望值補償。  
-儲存和計算的方式如下圖所示 :    
+The above is the proposed TPU architecture. The input weight data is first processed by the Weight Processing Unit (WPU) to determine whether it contains an MSR-4 pattern. If MSR-4 is detected, the leading four bits can be compressed into a single bit, and the least significant bit (LSB) is discarded, as it will be compensated during computation by fixing the LSB to 1 within the Reduced Precision Execution unit (RPE). A Shift Bit = 0 is added in front of the data to indicate that it is an MSR-4 weight. For weights without MSR-4, the leading four bits are preserved, and a Shift Bit = 0 is similarly added to indicate that it is a non-MSR-4 weight. Among the remaining four bits, the lowest three bits are stored in a Compensation Memory, since the LSB will again be fixed to 1 in the Compensation Processing Element (CPE) during computation as a form of expected value compensation. The storage and computation mechanism is illustrated in the figure below:  
+  
 |<img width="1092" height="578" alt="Design_MSR drawio (2)" src="https://github.com/user-attachments/assets/48697522-db78-4900-a01a-946885f3f35f" /> | <img width="844" height="512" alt="Cal drawio (1)" src="https://github.com/user-attachments/assets/1f6684f6-ed29-429c-8a5d-066877dd4b65" /> | 
 |-----------------------------------------------|-------------------------------|
-
-值得注意的是 : 如果要進行有號數的運算的話，我們必須將Compensation Weight多一個Sign Bit    
-(根據他原來的Weight Data的正負號)  
-
+  
+An important consideration is that, for signed operations, the compensation weight must include an extra sign bit, which reflects the sign of the original weight value.  
+  
 # 
-接著整個TPU會以WS Data Flow的方式，開始將權重和補償權重從各自的Memory中Pre-load到RPE以及CPE裡面，Pre-load結束後，Activation Memory會輸出Activation到Input Buffer以正45角的方法輸入到Systolic Array裡面。  
-  
-由於左半邊的Shadow Array補償架構的計算速度一定會比右邊快上不少(只要3Cycle就可以計算完成)，因此，左半邊計算完的結果會先存入Accumulator，寫入至他要補償的地址。藉由與右半邊共用，這樣可以省下許多硬體面積，不用在為Compensation的部分設計一塊Accumulator，當右半邊的結果算完後，則會和補償結果相加得到正確的值，如下圖所示。    
-  
+Next, the TPU operates using a Weight-Stationary (WS) dataflow. The weights and compensation weights are preloaded from their respective memory blocks into the Reduced Precision Execution units (RPEs) and Compensation Processing Elements (CPEs). Once the preloading is complete, the Activation Memory outputs activation values to the Input Buffer, which then feeds them into the systolic array at a +45-degree diagonal angle. Since the shadow array compensation structure on the left side performs computations significantly faster than the right side (completing in just 3 cycles), the results from the left side are first written into a shared accumulator, stored at the target compensation address. By sharing this accumulator with the right side of the array, we can save a significant amount of hardware area, as there's no need to design a separate accumulator specifically for the compensation path. Once the right side finishes its computation, its result is added to the compensation result stored in the accumulator to produce the final correct output, as illustrated in the figure below.    
+    
 <img width="2584" height="854" alt="Acc drawio" src="https://github.com/user-attachments/assets/eceb0009-4f9f-4e60-abad-f00a223fcf31" />  
-  
+    
 ## RPE / CPE Architecture :   
 | <img width="2630" height="1446" alt="PE drawio" src="https://github.com/user-attachments/assets/c13b90f2-0f2b-47ef-bc33-c8cd04cefd16" /> | <img width="2288" height="1412" alt="CPE drawio" src="https://github.com/user-attachments/assets/cdd3e260-c86d-4e87-9eaa-39a110822ab3" /> |
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
   
 
 ## Weight / Compensation / Activation Memory Architecture :
-在這個專案裡，為了實作之便利性，我們對Memory的結構稍微做了一些調整，設定其一次會輸出8個地址的資料，實際上可以將這些單一塊的Memory看做是8個SRAM，一次輸出8筆資料。
+In this project, for implementation convenience, we made some slight adjustments to the memory architecture by configuring it to output 8 data values per access. In practice, each memory block can be regarded as consisting of 8 individual SRAMs, enabling it to output 8 data entries simultaneously.   
+  
 <img width="3150" height="698" alt="Memory drawio" src="https://github.com/user-attachments/assets/bc47a240-fb7a-4a97-a1e6-861cafecec3e" />  
 
 ## Memory Read Control : 
-系統會在Mem_Write訊號Done之後，準備讀出Weight Memory and Compensation Memory的Weight Data pre-load到Systolic Array的PE裡面。因此，在Mem_Write結束的同時，我將Mem_Rd_en在負緣拉起，使Mem讀出資料，下一個負緣Cycle再讓Pre_LoadWeight、Pre_LoadCWeight拉起，讓剛剛那筆資料順利送入到Systolic Array裡面。  
-而Activation Memory也是，系統會在權重Pre-load完後加入Activation，我們可以進一步在最後一個權重Pre-load進來前，在負緣將Mem_Rd_en拉起，這樣在下一個Cycle，負緣拉起Cal，PE正緣讀到開始計算，就可以馬上輸出Activation給Buffer，加快速度。  
-  
+After the Mem_Write signal is asserted and completed, the system prepares to read from the Weight Memory and Compensation Memory in order to preload the weight data into the PE of the Systolic Array. Therefore, once Mem_Write finishes, I assert Mem_Rd_en on the falling edge to trigger the memory read. Then, on the next falling edge, the Pre_LoadWeight and Pre_LoadCWeight signals are asserted, allowing the previously fetched data to be successfully loaded into the systolic array. The same mechanism applies to the Activation Memory. After the weight preloading is complete, activations are introduced. To improve efficiency, we can assert Mem_Rd_en on the falling edge just before the last weight preload, so that in the next cycle, when Cal is asserted on the falling edge and the PEs begin computation on the rising edge, the corresponding activation data can be immediately provided to the input buffer—thus speeding up the overall operation.  
+    
 <img width="1479" height="265" alt="image" src="https://github.com/user-attachments/assets/38a219e8-0829-4202-b606-5d9f348363e4" />     
-<img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />    
-
-## RTL Simulation :  
-我們實現了上述TPU架構，以8x8 Systolic Array with 8 x 3 Compensation Arra來進行電路模擬。  
-詳細RTL可以參考[RTL Source](./RTL_Signed(Main))   
+<img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />      
   
-### Answer Check  
-我們利用Python計算正確的結果並將RTL模擬的結果輸出至[Output.out](./RTL_Signed(Main)/Output.out)上面，可以發現結果完全一致。      
+## RTL Simulation :   
+  
+### Answer Check   
+
 <img width="888" height="372" alt="image" src="https://github.com/user-attachments/assets/bcb49d35-67db-46d4-82fc-da65306aa883" />
 
 ### Activation Function (ReLU Function) :  
-在本次專案實作中，我們的Activation Function採用的是ReLU Function，將剛剛Systolic Array得到的值，經過ReLU後送入到Unified Buffer。    
+In this project implementation, we use the ReLU (Rectified Linear Unit) function as the activation function. The output values generated by the Systolic Array are passed through the ReLU function and then sent to the Unified Buffer.  
+  
 | <img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/14283b26-61a8-4405-92f1-b9ddc122e373" /> | <img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/fd5fc851-401a-4309-9184-2b514bec8611" /> | 
 |-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 
@@ -132,42 +127,36 @@ Below is the architecture of the model used in our training :
 | **Truncate 3 bits in MSR4 & Non-MSR4 Weight Data**                                      |  **92.71%** |  **89.20%** |  **11.36%** |  **19.27%** |
 |  **Add Expect Value (LSB = 1)**                                        | 97.29%      | 97.44%      | 98.96%      | 99.40%      |
 | **Add Expect Value (LSB = 1) & Non-MSR4 Compensation**                                      |  **97.34%** |  **98.00%** |  98.96% |  99.40% |
-
-以上是我們利用Pytorch做Post Training Quantization得到的數據，我們可知，當我們將模型量化成INT8時，精準度會下降大概0.1% ~ 1%左右，而當我們將Non-MSR-4截斷掉後，會發現模型的精準度下降的很快，這是因為雖然Non-MSR-4的比例只佔全部的1%左右，但對於參數比較大的ResNet、AlexNet來講卻會造成很嚴重的誤差，因此我們可以加上期望值補償，並套用以上所提出之補償架構，將損失補償回去，最後甚至在MLP、LeNet上達到比原本量化更好的精準度。  
+  
+The above results were obtained using Post-Training Quantization (PTQ) with PyTorch. We can observe that when the model is quantized to INT8, the accuracy typically drops by around 0.1% to 1%. However, once we truncate the Non-MSR-4 weights, the accuracy degrades rapidly. Although Non-MSR-4 weights only account for about 1% of the total weights, they can cause significant errors in larger models such as ResNet and AlexNet, where the parameters are more sensitive. To address this issue, we introduce an expected value compensation mechanism and apply the proposed compensation architecture. As a result, the accuracy loss can be effectively recovered, and in some cases—such as MLP and LeNet—the final accuracy even surpasses that of standard INT8 quantization.  
 
 ## Hardware Overhead Analysis :  
 ### PE Comparison  
-我們對每種PE皆使用最基礎以HA和FA來搭建而成的乘法單元，以確保公平之比較。    
-以下是我們有號數的PE做Synthesis所得的硬體面積大小比較  :  
+For each type of PE, we implemented the multiplication units using only basic Half Adders (HA) and Full Adders (FA) to ensure a fair comparison across all designs.  
+Below is the hardware area comparison obtained from synthesizing the signed-version PE :    
 |Type of PE|PE|RPE|CPE|
 |:--:|:--:|:--:|:--:|
 |Area | 0% | -13.2% | -33.4% | 
   
-每個RPE相比其原來的PE來說約少了357個Gate  
+Each RPE contains approximately 357 fewer gates compared to its original PE counterpart.  
 
 ### Input Buffer Comparison  
 |Type|Original Input Buffer|Input Buffer|
 |:--:|:--:|:--:|
 |Area | 1x | 2.19x |
 
-Input Buffer會比原來還要多出約3571個Gate  
+The Input Buffer incurs an overhead of approximately 3571 additional gates compared to the original design.
 
 # 
 
-我們來詳細分析一下整體的硬體開銷減少了多少 :  
-對於一個256x256的Systolic Array來說，他會需要256x3的Compensation Array  
-因此我們可以來計算整個Systolic Array的Hardware Overhead :    
--357x256x256 (Reduced Systolic Array) + 1671x256x3 (Extra Compensation Array) = -22113024 Gate   
-接著我們考慮上Input Buffer (轉換成256x256) = +3571 x 32 = +114272 Gate 
-
-Total :  -22113024 + 114272 = -21998752 Gate  
-因此就算我們加入了補償陣列，我們還是可以比原來的Systolic Array還小。  
-
-
-至於Compensation Memory的增加和Weight Memory、Activation Memory的減少，這個部分暫時不納入討論。  
-Weight Memory 可以縮小約 3/8，而 Activation Memory 可以縮小約 1/8。  
-
-
+Let us now analyze in detail how much overall hardware cost is reduced. For a 256×256 systolic array, the proposed architecture requires a 256×3 compensation array. We can then calculate the total hardware overhead for the systolic array as follows:   
+-357x256x256 (Reduced Systolic Array) + 1671x256x3 (Extra Compensation Array) = -22113024 Gate     
+Next, we consider the Input Buffer overhead, which (when scaled to a 256×256 configuration) adds +3571 x 32 = +114272 Gate   
+Total :  -22113024 + 114272 = -21998752 Gate    
+Therefore, even with the compensation array included, the overall area of the proposed systolic array remains significantly smaller than the original design.  
+  
+As for the increase in Compensation Memory and the reduction in Weight Memory and Activation Memory, this part will be temporarily excluded from the discussion. The Weight Memory can be reduced by approximately 3/8, and the Activation Memory by approximately 1/8.  
+  
 ### Each Module  
 
 |Module|Area Percnetage (%)| Gate Count |
