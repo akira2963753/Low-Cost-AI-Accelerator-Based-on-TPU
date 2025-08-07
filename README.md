@@ -140,9 +140,12 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 以下是我們有號數的PE做Synthesis所得的硬體面積大小比較  :  
 |Type of PE|PE|RPE|CPE|
 |:--:|:--:|:--:|:--:|
-|Area | 0% | -13.2% | -33.4% |
+|Area | 0% | -13.2% | -33.4% | 
   
 每個RPE相比其原來的PE來說約少了357 gate count。  
+對於一個256x256的Systolic Array來說，他會需要256x3的Compensation Array，因此我們可以來計算整個Systolic Array的Hardware Overhead :  
+-357*256*256(Reduced Systolic Array) + 1671*256*3(Extra Compensation Array) = -22113024 Gate  
+因此就算我們加入了補償陣列，我們還是可以比原來的Systolic Array還小。  
 
 ### Input Buffer Comparison  
 |Type|Original Input Buffer|Input Buffer|
