@@ -105,9 +105,10 @@ After the Mem_Write signal is asserted and completed, the system prepares to rea
 <img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />      
   
 ## RTL Simulation :   
-  
-### Answer Check   
+We use 8x8 Systolic Array and 8x3 Compensation Array to simulate the proposed architecture.  
 
+### Answer Check   
+We use Pytohn to check the answer, the result in [Output.out](./Source/Output.out)  
 <img width="888" height="372" alt="image" src="https://github.com/user-attachments/assets/bcb49d35-67db-46d4-82fc-da65306aa883" />
 
 ### Activation Function (ReLU Function) :  
