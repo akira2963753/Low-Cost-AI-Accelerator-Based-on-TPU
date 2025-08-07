@@ -13,10 +13,13 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 <img width="1116" height="839" alt="image" src="https://github.com/user-attachments/assets/47d3af4e-3567-4cf8-bcb4-d5f5aa79293b" />   
 
 ## Data Flow (OS/WS/IS) [2] [3] :  
-The systolic array architecture supports three mainstream dataflow methods: Output Stationary (OS), Weight Stationary (WS), and Input Stationary (IS).  
+The systolic array architecture supports three mainstream dataflow methods: Output Stationary (OS), Weight Stationary (WS), and Input Stationary (IS).    
+  
 <img width="1846" height="722" alt="image" src="https://github.com/user-attachments/assets/c6f07320-1c2e-4bca-9610-6f9131aaee00" />  
   
 We use the Weight Stationary (WS) data flow to implement our TPU architecture.  
+The weight data will be preloaded into each Processing Element (PE), and the activation values will be fed into the systolic array using a +45-degree diagonal flow.    
+   
 <img width="1664" height="877" alt="image" src="https://github.com/user-attachments/assets/c114ffd9-b225-458d-9e16-d64c49b8c25d" />   
    
 ## Most Significant Runs (MSR) [4] :  
