@@ -12,25 +12,23 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 ## Tensor Processing Unit (TPU) [1] :  
 <img width="1116" height="839" alt="image" src="https://github.com/user-attachments/assets/47d3af4e-3567-4cf8-bcb4-d5f5aa79293b" />   
 
-## Data Flow (OS/WS/IS) [2] [3] :
-在Systolic Array的資料流中，有三種主流資料流的方式，分別是Ouput Staionary(OS), Weight Staionary(WS) and Input Stationay(IS) Data Flow.  
-<img width="1846" height="722" alt="image" src="https://github.com/user-attachments/assets/c6f07320-1c2e-4bca-9610-6f9131aaee00" />
+## Data Flow (OS/WS/IS) [2] [3] :  
+The systolic array architecture supports three mainstream dataflow methods: Output Stationary (OS), Weight Stationary (WS), and Input Stationary (IS).  
+<img width="1846" height="722" alt="image" src="https://github.com/user-attachments/assets/c6f07320-1c2e-4bca-9610-6f9131aaee00" />  
   
-我們採用的是Weight Staionary (WS) Data Flow來實現我們的TPU架構。  
+We use the Weight Stationary (WS) data flow to implement our TPU architecture.  
 <img width="1664" height="877" alt="image" src="https://github.com/user-attachments/assets/c114ffd9-b225-458d-9e16-d64c49b8c25d" />   
-  
+   
 ## Most Significant Runs (MSR) [4] :  
-通常深度神經網絡模型使用32位元浮點數 (Floating Point) 運算進行訓練。訓練完成後可以獲得32位元的權重值。然而，為了減少計算資源和時間，深度神經網路通常使用定點數運算進行"推論計算"。而由於大部分的權重皆接近於0，因此我們把權重轉換成定點數時，如下圖所示，可以發現在高位元部分常常會有連續的1或是0，我們稱之為*Most Significant Runs (MSR)*。 
+
+Deep neural network models are typically trained using 32-bit floating-point operations. After training, the resulting weight values are also in 32-bit floating-point format. However, to reduce computational resources and **inference time**, deep neural networks often perform inference computations using fixed-point arithmetic. Since most weights are close to zero, when these weights are converted to fixed-point representation, as shown in the figure below, we often observe consecutive 1s or 0s in the most significant bits. This phenomenon is referred to as *Most Significant Runs (MSR)*.  
+
 <img width="1793" height="406" alt="image" src="https://github.com/user-attachments/assets/6a8130fa-d0b0-4e50-abb6-fae3c1e7e34c" />   
   
-舉例來說  
-以0.10534來說，我們將其轉換成定點數格式，可以得到0.10534x128=13.48(round)=13=00001101  
-因此我們可以將前面的四位元0縮減成一位元的0，也不會損失精準度。   
-以-0.0784來說，我們可以得到-0.0784x128=-10.0352(round)=-10=11110110  
-一樣可以將前面四位元的1縮減成一位元的1。  
+For example, consider the value 0.10534. When converted to a fixed-point format, we get: 0.10534 × 128 = 13.48, which rounds to 13, represented in binary as 00001101. In this case, the leading four zeros can be compressed into a single zero without losing precision.  
+Similarly, for the value -0.0784, we have: -0.0784 × 128 = -10.0352, which rounds to -10, represented in binary (two's complement) as 11110110. Here, the leading four ones can also be compressed into a single one without any loss of precision.  
      
-我們接著去分析在不同深度神經網路模型中，MSR數目各自的占比，我們將模型的權重以定點數格式量化成INT8，可以發現幾乎99%都含有MSR-4，由於權重皆是小於0的數字，我們可以將MSR-4這四個位元縮減成一個位元來表示，這不僅可以縮短我們的計算成本、功耗，也能夠降低我們使用的記憶體空間。
-
+We then analyze the proportion of MSR occurrences across different deep neural network models. By quantizing the model weights into 8-bit integers (INT8) using fixed-point representation, we observe that nearly 99% of the weights contain an MSR-4. Since most of the weights are negative values, the four most significant bits (MSR-4) can be compressed into a single bit. This technique not only reduces computational cost and power consumption, but also significantly lowers memory usage.    
 
 | MSR-N / Model | MLP |  LeNet | ResNet | AlexNet | 
 |:-----:|:---:|:------:|:------:|:-------:|
@@ -40,13 +38,13 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 | MSR-6 | 78.2% |  53.4% | 99.1% | 97.8% |
 | MSR-7 | 40.4% |  27.3% | 85.5% | 84.3% |
 
-由上述可知，如果我們將有MSR-4的權重資料從8位元量化為5位元做計算，則沒有MSR-4的資料也必須要做截斷，這些截斷必定會帶來一些相對應的精確度損失...    
-如果我們不想要這些精準度損失，就必須要把被截斷的部分補償回來。    
-  
+As shown above, if we compress weight data containing MSR-4 from 8 bits to 5 bits for computation, then the data without MSR-4 must also be truncated. However, such truncation inevitably introduces some loss in accuracy.  
+If we want to avoid this loss of precision, we need to compensate for the truncated bits accordingly.  
     
   
 ## MSR-4 Analysis : 
-我們藉由去觀察訓練完的權重MSR-4的分布情形，發現每256個權重中，最差只會有2.9個是沒有MSR-4的權重資料。因此，對於256x256的Systolic Array來說，每個col我只需要3個row來做補償即可。  
+By analyzing the distribution of MSR-4 in the trained weights, we found that, on average, only 2.9 out of every 256 weights do not contain MSR-4 patterns. Therefore, for a 256×256 systolic array, we only need 3 rows per column to perform compensation.  
+   
 | Model         | MLP        | LeNet      | ResNet     | AlexNet    |
 |:---------------:|:------------:|:------------:|:------------:|:------------:|
 | **Layers (CONV/FC)** | 3(0/3)     | 5(2/3)     | 17(16/1)   | 8(5/3)     |
@@ -58,9 +56,9 @@ If you encounter any issues, feel free to contact harry2963753@gmail.com
 | **Non-MSR-4 / 256** | 0.1      | **2.9**  | 0.1        | 0.0        |
    
    
-此外，在訓練模型時，一些避免overfitting的方法，因為其會將權重分布縮小的特性，也有助於我們提高MSR-4%。  
-例如 : 降低學習率、L1 Regularization and L2 Regularization (Weight Decay)    
-以下是我們這次訓練的模型結構 :   
+In addition, some techniques used during model training to prevent overfitting also contribute to an increased MSR-4 ratio, as they tend to compress the weight distribution. Examples include: reducing the learning rate, L1 regularization, and L2 regularization (weight decay).    
+Below is the architecture of the model used in our training :   
+  
 | Model               | MLP          | LeNet        | ResNet         | AlexNet        |
 |:-----:|:---:|:------:|:------:|:-------:|
 | **Optimizer**           | Adam             | Adam             | Adam               | Adam               |
