@@ -150,10 +150,12 @@ The Input Buffer incurs an overhead of approximately 3571 additional gates compa
 # 
 
 Let us now analyze in detail how much overall hardware cost is reduced. For a 256×256 systolic array, the proposed architecture requires a 256×3 compensation array. We can then calculate the total hardware overhead for the systolic array as follows:   
--357x256x256 (Reduced Systolic Array) + 1671x256x3 (Extra Compensation Array) = -22113024 Gate      
-Next, we consider the Input Buffer overhead,   
-which (when scaled to a 256×256 configuration) adds +3571 x 32 = +114272 Gate    
+-357x256x256 (Reduced Systolic Array) + 1671x256x3 (Extra Compensation Array) = -22113024 Gate     
+    
+Next, we consider the Input Buffer overhead, which (when scaled to a 256×256 configuration) adds 
    
++3571 x 32 = +114272 Gate    
+  
 Total :  -22113024 + 114272 = -21998752 Gate    
 Therefore, even with the compensation array included, the overall area of the proposed systolic array remains significantly smaller than the original design.  
   
