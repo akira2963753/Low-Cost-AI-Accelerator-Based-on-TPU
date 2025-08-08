@@ -136,10 +136,10 @@ For each type of PE, we implemented the multiplication units using only basic Ha
 Below is the hardware area comparison obtained from synthesizing the signed-version PE :    
 |Type of PE|PE|RPE|CPE|
 |:--:|:--:|:--:|:--:|
-|Area | 0% | -13.2% | -33.4% | 
+|Area | 0% | -18.8% | -30.6% | 
   
-For a 256x256 Systolic Array, we overall reduce about -11.2%.   
-Each RPE contains approximately 357 fewer gates compared to its original PE counterpart.   
+For a 256x256 Systolic Array, we overall reduce about -16.64%.   
+Each RPE contains approximately 460 fewer gates compared to its original PE counterpart.   
 
 ### Input Buffer Comparison  
 |Type|Original Input Buffer|Input Buffer|
