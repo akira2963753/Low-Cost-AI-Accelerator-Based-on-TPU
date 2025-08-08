@@ -1,0 +1,132 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : CPE_1
+Version: O-2018.06
+Date   : Fri Aug  8 13:46:51 2025
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: Activation_cin[6]
+              (input port clocked by clk)
+  Endpoint: Compensation_out_reg[13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  CPE_1              tsmc090_wl10          slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.10       0.10
+  input external delay                                    0.50       0.60 f
+  Activation_cin[6] (in)                                  0.01       0.61 f
+  CPE_MAC_UNIT/Activation[7] (MAC_COMPENSATION_PARTIAL_SUM_WIDTH14)
+                                                          0.00       0.61 f
+  CPE_MAC_UNIT/m1/activation[7] (Multiplier_CPE)          0.00       0.61 f
+  CPE_MAC_UNIT/m1/U30/Y (XOR2X8)                          0.09       0.69 r
+  CPE_MAC_UNIT/m1/CF200/A (Half_adder_0)                  0.00       0.69 r
+  CPE_MAC_UNIT/m1/CF200/U1/Y (AND2X8)                     0.11       0.80 r
+  CPE_MAC_UNIT/m1/CF200/C (Half_adder_0)                  0.00       0.80 r
+  CPE_MAC_UNIT/m1/CF201/B (Half_adder_30)                 0.00       0.80 r
+  CPE_MAC_UNIT/m1/CF201/U1/Y (AND2X8)                     0.09       0.90 r
+  CPE_MAC_UNIT/m1/CF201/C (Half_adder_30)                 0.00       0.90 r
+  CPE_MAC_UNIT/m1/CF202/B (Half_adder_29)                 0.00       0.90 r
+  CPE_MAC_UNIT/m1/CF202/U2/Y (XOR2X8)                     0.09       0.99 r
+  CPE_MAC_UNIT/m1/CF202/S (Half_adder_29)                 0.00       0.99 r
+  CPE_MAC_UNIT/m1/U27/Y (AND2X8)                          0.11       1.10 r
+  CPE_MAC_UNIT/m1/CF214/A (Full_adder_0)                  0.00       1.10 r
+  CPE_MAC_UNIT/m1/CF214/U2/CO (ACHCINX4)                  0.21       1.32 r
+  CPE_MAC_UNIT/m1/CF214/C (Full_adder_0)                  0.00       1.32 r
+  CPE_MAC_UNIT/m1/CF215/C_in (Full_adder_26)              0.00       1.32 r
+  CPE_MAC_UNIT/m1/CF215/U1/Y (BUFX14)                     0.11       1.42 r
+  CPE_MAC_UNIT/m1/CF215/U3/Y (INVX12)                     0.03       1.45 f
+  CPE_MAC_UNIT/m1/CF215/U2/CO (ACHCINX4)                  0.09       1.53 r
+  CPE_MAC_UNIT/m1/CF215/C (Full_adder_26)                 0.00       1.53 r
+  CPE_MAC_UNIT/m1/U24/Y (BUFX18)                          0.10       1.63 r
+  CPE_MAC_UNIT/m1/CF216/C_in (Full_adder_25)              0.00       1.63 r
+  CPE_MAC_UNIT/m1/CF216/U1/Y (XOR2X8)                     0.09       1.72 r
+  CPE_MAC_UNIT/m1/CF216/S (Full_adder_25)                 0.00       1.72 r
+  CPE_MAC_UNIT/m1/CF223/A (Full_adder_20)                 0.00       1.72 r
+  CPE_MAC_UNIT/m1/CF223/U2/CO (ACHCINX4)                  0.24       1.96 r
+  CPE_MAC_UNIT/m1/CF223/C (Full_adder_20)                 0.00       1.96 r
+  CPE_MAC_UNIT/m1/CF224/C_in (Full_adder_19)              0.00       1.96 r
+  CPE_MAC_UNIT/m1/CF224/U2/Y (INVX6)                      0.09       2.05 f
+  CPE_MAC_UNIT/m1/CF224/U1/CO (ACHCINX4)                  0.11       2.15 r
+  CPE_MAC_UNIT/m1/CF224/C (Full_adder_19)                 0.00       2.15 r
+  CPE_MAC_UNIT/m1/CF225/C_in (Full_adder_18)              0.00       2.15 r
+  CPE_MAC_UNIT/m1/CF225/U4/Y (INVX6)                      0.09       2.24 f
+  CPE_MAC_UNIT/m1/CF225/U2/Y (XOR2X8)                     0.10       2.34 r
+  CPE_MAC_UNIT/m1/CF225/S (Full_adder_18)                 0.00       2.34 r
+  CPE_MAC_UNIT/m1/CF232/A (Full_adder_12)                 0.00       2.34 r
+  CPE_MAC_UNIT/m1/CF232/U2/CO (ACHCINX4)                  0.23       2.57 r
+  CPE_MAC_UNIT/m1/CF232/C (Full_adder_12)                 0.00       2.57 r
+  CPE_MAC_UNIT/m1/CF233/C_in (Full_adder_11)              0.00       2.57 r
+  CPE_MAC_UNIT/m1/CF233/U8/Y (BUFX10)                     0.10       2.67 r
+  CPE_MAC_UNIT/m1/CF233/U6/Y (INVX16)                     0.04       2.71 f
+  CPE_MAC_UNIT/m1/CF233/U4/Y (NAND2BX8)                   0.04       2.75 r
+  CPE_MAC_UNIT/m1/CF233/U5/Y (AND3X8)                     0.11       2.86 r
+  CPE_MAC_UNIT/m1/CF233/C (Full_adder_11)                 0.00       2.86 r
+  CPE_MAC_UNIT/m1/CF234/C_in (Full_adder_10)              0.00       2.86 r
+  CPE_MAC_UNIT/m1/CF234/U5/Y (XOR2X8)                     0.11       2.97 r
+  CPE_MAC_UNIT/m1/CF234/S (Full_adder_10)                 0.00       2.97 r
+  CPE_MAC_UNIT/m1/CF241/A (Full_adder_4)                  0.00       2.97 r
+  CPE_MAC_UNIT/m1/CF241/U2/CO (ACHCINX4)                  0.24       3.21 r
+  CPE_MAC_UNIT/m1/CF241/C (Full_adder_4)                  0.00       3.21 r
+  CPE_MAC_UNIT/m1/CF242/C_in (Full_adder_3)               0.00       3.21 r
+  CPE_MAC_UNIT/m1/CF242/U4/Y (INVX6)                      0.08       3.29 f
+  CPE_MAC_UNIT/m1/CF242/U3/CO (ACHCINX4)                  0.11       3.41 r
+  CPE_MAC_UNIT/m1/CF242/C (Full_adder_3)                  0.00       3.41 r
+  CPE_MAC_UNIT/m1/CF243/C_in (Full_adder_2)               0.00       3.41 r
+  CPE_MAC_UNIT/m1/CF243/U1/Y (INVX10)                     0.07       3.47 f
+  CPE_MAC_UNIT/m1/CF243/U3/CO (ACHCINX4)                  0.10       3.57 r
+  CPE_MAC_UNIT/m1/CF243/C (Full_adder_2)                  0.00       3.57 r
+  CPE_MAC_UNIT/m1/CF244/C_in (Full_adder_1)               0.00       3.57 r
+  CPE_MAC_UNIT/m1/CF244/U2/Y (BUFX10)                     0.10       3.67 r
+  CPE_MAC_UNIT/m1/CF244/U4/Y (XOR2X8)                     0.07       3.74 r
+  CPE_MAC_UNIT/m1/CF244/S (Full_adder_1)                  0.00       3.74 r
+  CPE_MAC_UNIT/m1/U71/Y (XOR2X8)                          0.11       3.85 r
+  CPE_MAC_UNIT/m1/CF256/A (Half_adder_2)                  0.00       3.85 r
+  CPE_MAC_UNIT/m1/CF256/U1/Y (AND2X8)                     0.11       3.97 r
+  CPE_MAC_UNIT/m1/CF256/C (Half_adder_2)                  0.00       3.97 r
+  CPE_MAC_UNIT/m1/CF257/B (Half_adder_1)                  0.00       3.97 r
+  CPE_MAC_UNIT/m1/CF257/U1/Y (XOR2X8)                     0.08       4.04 r
+  CPE_MAC_UNIT/m1/CF257/S (Half_adder_1)                  0.00       4.04 r
+  CPE_MAC_UNIT/m1/sum[12] (Multiplier_CPE)                0.00       4.04 r
+  CPE_MAC_UNIT/add_60/A[12] (MAC_COMPENSATION_PARTIAL_SUM_WIDTH14_DW01_add_1)
+                                                          0.00       4.04 r
+  CPE_MAC_UNIT/add_60/U127/Y (BUFX20)                     0.10       4.14 r
+  CPE_MAC_UNIT/add_60/U119/Y (OR2X8)                      0.08       4.22 r
+  CPE_MAC_UNIT/add_60/U124/Y (AND2X8)                     0.08       4.30 r
+  CPE_MAC_UNIT/add_60/U123/Y (XOR2X8)                     0.09       4.39 r
+  CPE_MAC_UNIT/add_60/SUM[13] (MAC_COMPENSATION_PARTIAL_SUM_WIDTH14_DW01_add_1)
+                                                          0.00       4.39 r
+  CPE_MAC_UNIT/Partial_Sum_out[13] (MAC_COMPENSATION_PARTIAL_SUM_WIDTH14)
+                                                          0.00       4.39 r
+  U35/Y (NAND2X8)                                         0.06       4.45 f
+  U132/Y (NAND2X8)                                        0.04       4.50 r
+  Compensation_out_reg[13]/D (DFFYQX2)                    0.00       4.50 r
+  data arrival time                                                  4.50
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.10       4.10
+  clock uncertainty                                      -0.50       3.60
+  Compensation_out_reg[13]/CK (DFFYQX2)                   0.00       3.60 r
+  library setup time                                     -0.03       3.57
+  data required time                                                 3.57
+  --------------------------------------------------------------------------
+  data required time                                                 3.57
+  data arrival time                                                 -4.50
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.93
+
+
+1
