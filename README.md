@@ -32,8 +32,8 @@ Low Cost AI Accelerator Based on TPU /
 ├── Src/                      # Simulation resource (.dat, .out)
 ├── Result_Simulator/         # Check the Answer
 ├── Area_Analysis/            # Analyze the Area
-│   └── area.log
-│   └── area.py
+│   └── area.log              # The system area report
+│   └── area.py               # Area calculator  
 └── README.md                 
 ```  
 
