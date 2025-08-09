@@ -30,7 +30,10 @@ Low Cost AI Accelerator Based on TPU /
 │   └── UB.v                  # Unified Buffer  
 ├── PE/                       # PE Comparsion resource
 ├── Src/                      # Simulation resource (.dat, .out)
-├── Result_Simulator/         # Check Answer
+├── Result_Simulator/         # Check the Answer
+├── Area_Analysis/            # Analyze the Area
+│   └── area.log
+│   └── area.py
 └── README.md                 
 ```  
 
