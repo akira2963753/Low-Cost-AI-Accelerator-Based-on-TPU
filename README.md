@@ -217,7 +217,7 @@ As for the increase in Compensation Memory and the reduction in Weight Memory an
 
 ## Reference : 
 **[0] Weight-Aware and Reduced-Precision Architecture Designs for Low-Cost AI Accelerators**  
-├── https://hdl.handle.net/11296/zs6qk8    
+└── https://hdl.handle.net/11296/zs6qk8    
 **[1] In-Datacenter Performance Analysis of a Tensor Processing Unit**     
 **[2] SCALE-Sim: Systolic CNN Accelerator Simulator**    
 **[3] Effective_Runtime_Fault_Detection_for_DNN_Accelerators**  
