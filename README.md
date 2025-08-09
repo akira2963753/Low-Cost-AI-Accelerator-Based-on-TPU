@@ -136,11 +136,12 @@ For each type of PE, we implemented the multiplication units using only basic Ha
 Below is the hardware area comparison obtained from synthesizing the signed-version PE :    
 |Type of PE|PE|RPE|CPE|
 |:--:|:--:|:--:|:--:|
-|Area | 0% | -18.8% | -30.6% | 
+|Area | 0% | -18.8% | -30.6% |   
+|Power|  0.6743mW | 0.5399mW | 0.4327mW |  
+     
+For a 256x256 Systolic Array, we overall reduce about -16.64%.    
+Each RPE contains approximately 460 fewer gates compared to its original PE.     
   
-For a 256x256 Systolic Array, we overall reduce about -16.64%.   
-Each RPE contains approximately 460 fewer gates compared to its original PE counterpart.   
-
 ### Input Buffer Comparison  
 |Type|Original Input Buffer|Input Buffer|
 |:--:|:--:|:--:|
@@ -151,13 +152,13 @@ The Input Buffer incurs an overhead of approximately 3571 additional gates compa
 # 
 
 Let us now analyze in detail how much overall hardware cost is reduced. For a 256×256 systolic array, the proposed architecture requires a 256×3 compensation array. We can then calculate the total hardware overhead for the systolic array as follows:   
--357x256x256 (Reduced Systolic Array) + 1671x256x3 (Extra Compensation Array) = -22113024 Gate     
+-460x256x256 (Reduced Systolic Array) + 1688x256x3 (Extra Compensation Array) = -28615116 Gate     
     
 Next, we consider the Input Buffer overhead, which (when scaled to a 256×256 configuration) adds 
    
 +3571 x 32 = +114272 Gate    
   
-Total :  -22113024 + 114272 = -21998752 Gate    
+Total :  -28615116 + 114272 = -28500844 Gate    
 Therefore, even with the compensation array included, the overall area of the proposed systolic array remains significantly smaller than the original design.  
   
 As for the increase in Compensation Memory and the reduction in Weight Memory and Activation Memory, this part will be temporarily excluded from the discussion. The Weight Memory can be reduced by approximately 3/8, and the Activation Memory by approximately 1/8.  
