@@ -28,9 +28,18 @@ Low Cost AI Accelerator Based on TPU /
 │   └── Accumulator.v
 │   └── Activation_Function.v
 │   └── UB.v                  # Unified Buffer  
-├── PE/                       # PE Comparsion resource  
+├── PE/                       # PE Comparsion resource
+│   └── PE.v
+│   └── RPE.v
+│   └── CPE.v
+│   └── PE_area.log
+│   └── PE_porwe.log
+│   └── RPE_area.log
+│   └── RPE_porwe.log
+│   └── CPE_area.log
+│   └── CPE_porwe.log
 ├── Src/                      # Simulation resource (.dat, .out)
-├── Result_Simulator/         # Check Answer                 
+├── Result_Simulator/         # Check Answer
 └── README.md                 
 ```  
 
