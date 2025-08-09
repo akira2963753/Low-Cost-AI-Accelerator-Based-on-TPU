@@ -1,6 +1,33 @@
 # Low Cost AI Accelerator Based on TPU   
 This GitHub repository is provided for reference purposes only. If you encounter any issues, feel free to contact harry2963753@gmail.com    
-  
+
+### Repository Structure :  
+```
+Low Cost AI Accelerator Based on TPU /
+├── Model/                    # Model Training  
+│   ├── MLP.py         
+│   └── LeNet.py              
+│   └── ResNet.py              
+│   └── AlexNet.py              
+├── RTL/                      # RTL Code  
+│   ├── TPU.v                 # Top Module  
+│   └── tb_TPU.v              # Testbench  
+│   └── TSC.v                 # TPU System Controller  
+│   └── Weight_Memory.v              
+│   └── Activation_Memory.v
+│   └── Compensation_Memory.v
+│   └── WPU.v                 # Weight Pre-processing Unit  
+│   └── Input_Buffer.v
+│   └── RPE.v                 # Reduce-precision Processing Element  
+│   └── CPE.v                 # Compensation Processing Element  
+│   └── Accumulator.v
+│   └── Activation_Function.v
+│   └── UB.v                  # Unified Buffer  
+├── PE/                       # PE Comparsion resource  
+├── Src/                      # Simulation resource (.dat, .out)                   
+└── README.md                 
+```
+
 ### Development Environment :  
 - RTL Simulator : *ModelSim-Intel FPGA Standard Edition, Version 20.1.1, windows*  
 - Synthesis Tool : *Synopsys Design Compiler*
