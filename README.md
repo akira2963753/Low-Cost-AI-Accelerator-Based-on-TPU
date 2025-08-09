@@ -1,9 +1,9 @@
 # Low Cost AI Accelerator Based on TPU   
   
 ### Development Environment :    
-- RTL Simulator : *ModelSim-Intel FPGA Standard Edition, Version 20.1.1, windows* / *Vivado*   
-- Synthesis Tool : *Synopsys Design Compiler*
-- Model Training : *Pytorch*    
+- **RTL Simulator** : *ModelSim-Intel FPGA Standard Edition, Version 20.1.1, windows* / *Vivado*   
+- **Synthesis Tool** : *Synopsys Design Compiler*
+- **Model Training** : *Pytorch*    
    
 ### Repository Structure :  
 ```
