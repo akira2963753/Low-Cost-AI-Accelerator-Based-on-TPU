@@ -106,6 +106,7 @@ After the Mem_Write signal is asserted and completed, the system prepares to rea
   
 ## RTL Simulation :   
 We use 8x8 Systolic Array and 8x3 Compensation Array to simulate the proposed architecture.  
+Therefore, We use 64 * 5bit Weight Memory, 64 * 7bit Activation Memory and 24 * 3bit Compensation Memory to help ours simulation.  
 
 ### Answer Check   
 We use Pytohn to check the answer, the result in [output.out](./Source/Output.out)  
