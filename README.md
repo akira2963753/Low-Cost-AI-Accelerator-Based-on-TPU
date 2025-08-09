@@ -1,6 +1,6 @@
 # Low Cost AI Accelerator Based on TPU   
 
-We build upon the MSR4 data characteristic proposed in our senior’s thesis [Reference[0]](REFERENCE) , which helps reduce weight bit-length, and further design a compensation architecture to offset the loss caused by Non-MSR-4 data. This approach enables us to achieve higher accuracy, and in some models, even surpass the original quantization accuracy. Therefore, compared with conventional TPU architectures, our proposed design can achieve higher accuracy while reducing hardware overhead.  
+We build upon the MSR-4 data characteristic proposed in our senior’s thesis [Reference[0]](REFERENCE) , which helps reduce weight bit-length, and further design a compensation architecture to offset the loss caused by Non-MSR-4 data. This approach enables us to achieve higher accuracy, and in some models, even surpass the original quantization accuracy. Therefore, compared with conventional TPU architectures, our proposed design can achieve higher accuracy while reducing hardware overhead.  
    
 ### Development Environment :    
 - **RTL Simulator** : *ModelSim-Intel FPGA Standard Edition, Version 20.1.1, windows* / *Vivado*   
