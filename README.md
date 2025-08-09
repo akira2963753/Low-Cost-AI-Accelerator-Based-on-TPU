@@ -211,13 +211,13 @@ As for the increase in Compensation Memory and the reduction in Weight Memory an
 
 
 
-## Reference :  
+## Reference : 
+**[0] Weight-Aware and Reduced-Precision Architecture Designs for Low-Cost AI Accelerators**  
 **[1] In-Datacenter Performance Analysis of a Tensor Processing Unit**     
 **[2] SCALE-Sim: Systolic CNN Accelerator Simulator**    
 **[3] Effective_Runtime_Fault_Detection_for_DNN_Accelerators**  
 **[4] Refresh Power Reduction of DRAMs in DNN Systems Using Hybrid Voting and ECC Method**   
-**[5] Weight-Aware and Reduced-Precision Architecture Designs for Low-Cost AI Accelerators**    
-**[6] DRUM: A Dynamic Range Unbiased Multiplier for approximate applications**   
-**[7] APTPU: Approximate Computing Based Tensor Processing Unit**   
+**[5] DRUM: A Dynamic Range Unbiased Multiplier for approximate applications**   
+**[6] APTPU: Approximate Computing Based Tensor Processing Unit**   
 
 
