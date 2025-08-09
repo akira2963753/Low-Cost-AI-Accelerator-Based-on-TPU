@@ -173,7 +173,7 @@ As for the increase in Compensation Memory and the reduction in Weight Memory an
 |**Activation Memory**| 2.4% |  4658  |
 |**Compensation Memory**| 0.9% | 1683 |
 |**Input Buffer**| 5.5% | 10700 |
-|**TPU System Controller**| 0.3% | 618 |
+|**TPU System Controller**| 0.5% | 1030 |
 |**Unified Buffer**| 6.4% | 12340 |
 |**WPU**| 0.2% | 464 |
 |**Systolic Array**| 52.25% | 101483 |
