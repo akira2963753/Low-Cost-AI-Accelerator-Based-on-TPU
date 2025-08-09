@@ -179,7 +179,7 @@ As for the increase in Compensation Memory and the reduction in Weight Memory an
 |**Systolic Array**| 52.25% | 101483 |
 |**Accumulator**| 12.11% | 11360 |
 |**Activation Function**| 0.11% | 213 | 
-|**Compensation Array**| 5.79% | 11,243 |
+|**Compensation Array**| 17.8% | 34545 |
 
 
 
