@@ -169,17 +169,17 @@ As for the increase in Compensation Memory and the reduction in Weight Memory an
 
 |Module|Area Percnetage (%)| Gate Count |
 |:--:|:--:|:--:|
-|**Weight Memory**| 1.9% | 3500 |
-|**Activation Memory**| 2.6% |  4800  |
-|**Compensation Memory**| 1.0% | 1830 |
-|**Input Buffer**| 5.8% | 10586 |
-|**TPU System Controller**| 0.3% | 324 |
-|**Unified Buffer**|  |  |
-|**WPU**| 0.2% | 385 |
-|**Systolic Array**| 75% |   |
-|**Accumulator**| 14% | 25450 |
-|**Activation Function**| 0.1% | 191 | 
-|**Compensation Array**| 18% | 
+|**Weight Memory**| 1.8% | 3400 |
+|**Activation Memory**| 2.4% |  4658  |
+|**Compensation Memory**| 0.9% | 1683 |
+|**Input Buffer**| 5.5% | 10700 |
+|**TPU System Controller**| 0.3% | 618 |
+|**Unified Buffer**| 6.4% | 12340 |
+|**WPU**| 0.2% | 464 |
+|**Systolic Array**| 52.25% | 101483 |
+|**Accumulator**| 12.11% | 11360 |
+|**Activation Function**| 0.11% | 213 | 
+|**Compensation Array**| 5.79% | 11,243 |
 
 
 
