@@ -177,7 +177,7 @@ You also can go to [Report](./PE) to see our PE report and RTL.
 ### Input Buffer Comparison  
 |Type|Original Input Buffer|Input Buffer|
 |:--:|:--:|:--:|
-|Area | 1x | 2.19x |
+|Area | 0% | +125% |
 
 The Input Buffer incurs an overhead of approximately 3571 additional gates compared to the original design.
 
