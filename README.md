@@ -154,7 +154,7 @@ After the Mem_Write signal is asserted and completed, the system prepares to rea
 | Action                           | Cycles Needed        |
 |----------------------------------|----------------------|
 | Input Buffer Fetch the Activation| **1**                |
-| Load Activation into SA          | **n - 1** (Input Delay) + **n** (Matrix Size) + **n - 1** (Broadcast Delay) |
+| Load Activation into SA          | **n - 1 (Input Delay) + n (Matrix Size) + n - 1 (Broadcast Delay)** |
 | **Total needed**                 | **4n - 2**           |
 
 ### 3. Output the Result
