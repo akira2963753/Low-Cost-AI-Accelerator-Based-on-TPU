@@ -138,7 +138,9 @@ After the Mem_Write signal is asserted and completed, the system prepares to rea
     
 <img width="1479" height="265" alt="image" src="https://github.com/user-attachments/assets/38a219e8-0829-4202-b606-5d9f348363e4" />     
 <img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />      
-  
+
+## The number of cycles needed for processing in the Systolic Array :  
+
 ## RTL Simulation :   
 We use 8x8 Systolic Array and 8x3 Compensation Array to simulate the proposed architecture.  
 Therefore, We use 64 x 5bit Weight Memory, 64 x 7bit Activation Memory and 24 x 3bit Compensation Memory to help ours simulation.  
