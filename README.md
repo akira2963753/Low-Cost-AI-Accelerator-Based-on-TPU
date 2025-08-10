@@ -139,13 +139,17 @@ After the Mem_Write signal is asserted and completed, the system prepares to rea
 <img width="1479" height="265" alt="image" src="https://github.com/user-attachments/assets/38a219e8-0829-4202-b606-5d9f348363e4" />     
 <img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />      
 
-## The number of cycles needed for processing in the Systolic Array :  
-1. Pre-load Weight Data into Systolic Array  
-   Pre-load Weight into RPE needed :  n 
-   Pre-load Weight into CPE needed :  n x 0.1% (round up)
-2. Load Activation into Systolic Array
-   Input Buffer Fetch the Activation needed : 1  
-   Activation needed : n - 1 (Input Delay) + n (Matrix Size) + n - 1 (Broadcast Delay)   
+## The number of cycles needed for processing in the Systolic Array (SA) :  
+1. Pre-load Weight Data into SA    
+   Pre-load Weight into RPE needed :  n - 1   
+   Pre-load Weight into CPE needed :  (n x 0.1%) - 1
+   Total needed : n - 1   
+3. Load Activation into SA    
+   Input Buffer Fetch the Activation needed : 1    
+   Load Activation into SA needed : n - 1 (Input Delay) + n (Matrix Size) + n - 1 (Broadcast Delay)  
+   Total needed :  4n - 2    
+4. Output the result needed : 1  
+   Total needed : 4n - 1         
  
 ## RTL Simulation :   
 We use 8x8 Systolic Array and 8x3 Compensation Array to simulate the proposed architecture.  
