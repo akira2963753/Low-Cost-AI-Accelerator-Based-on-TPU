@@ -19,28 +19,30 @@ Low Cost AI Accelerator Based on TPU /
 │   └── LeNet.py              
 │   └── ResNet.py              
 │   └── AlexNet.py              
-├── RTL/                      # RTL Code  
-│   ├── TPU.v                 # Top Module  
-│   └── tb_TPU.v              # Testbench  
-│   └── TSC.v                 # TPU System Controller  
+├── RTL/                             # RTL   
+│   ├── TPU.v                        # Top Module  
+│   └── tb_TPU.v                     # Testbench  
+│   └── TSC.v                        # TPU System Controller  
 │   └── Weight_Memory.v              
 │   └── Activation_Memory.v
 │   └── Compensation_Memory.v
-│   └── WPU.v                 # Weight Pre-processing Unit  
+│   └── WPU.v                        # Weight Pre-processing Unit  
 │   └── Input_Buffer.v
-│   └── RPE.v                 # Reduce-precision Processing Element  
-│   └── CPE.v                 # Compensation Processing Element  
+│   └── RPE.v                        # Reduce-precision Processing Element  
+│   └── CPE.v                        # Compensation Processing Element  
 │   └── Accumulator.v
 │   └── Activation_Function.v
-│   └── UB.v                  # Unified Buffer  
-├── PE/                       # PE Comparsion resource (area.log, power.log and .v)
-├── Src/                      # Simulation resource (.dat, .out)
-├── Result_Simulator/         # Check the Answer
-├── Area_Analysis/            # Analyze the Area
-│   └── area.log              # The system area report
-│   └── area.py               # Area calculator (RPE, CPE)
-├── WPU_Algorithm/             # WPU_Algorithm
-└── WPU_Algorithm.py                
+│   └── UB.v                         # Unified Buffer  
+├── PE/                              # PE Comparsion resource (area.log, power.log and .v)
+├── Src/                             # Simulation resource (.dat, .out)
+├── Py_Src/
+│   └── Result_Simulator/     
+│       └── Result_Simulator.py      # Check the Answer
+│   └── Area_Analysis/               # Analyze the Area
+│       └── area.log                 # The system area report
+│       └── area_calculator.py       # Area calculator (RPE, CPE)
+│   └── WPU_Algorithm/               
+│       └── WPU_Algorithm.py         # WPU Algorithm       
 └── README.md                 
 ```  
 
@@ -114,7 +116,7 @@ Below is the architecture of the model used in our training :
 
   
 The above is the proposed TPU architecture. The input weight data is first processed by the Weight Processing Unit (WPU) to determine whether it contains an MSR-4 pattern. If MSR-4 is detected, the leading four bits can be compressed into a single bit, and the least significant bit (LSB) is discarded, as it will be compensated during computation by fixing the LSB to 1 within the Reduced-precision Processing Element (RPE). A Shift Bit = 0 is added in front of the data to indicate that it is an MSR-4 weight. For weights without MSR-4, the leading four bits are preserved, and a Shift Bit = 0 is similarly added to indicate that it is a non-MSR-4 weight. Among the remaining four bits, the lowest three bits are stored in a Compensation Memory, since the LSB will again be fixed to 1 in the Compensation Processing Element (CPE) during computation as a form of expected value compensation.   
-**If you want to see detail of the algorithm about WPU, you can go [here](./WPU_Algorithm/WPU_Algorithm.py).**  
+**If you want to see detail of the algorithm about WPU, you can go [here](./Py_Src/WPU_Algorithm/WPU_Algorithm.py).**  
 The storage and computation mechanism is illustrated in the figure below:    
   
 |<img width="1092" height="578" alt="Design_MSR drawio (2)" src="https://github.com/user-attachments/assets/48697522-db78-4900-a01a-946885f3f35f" /> | <img width="844" height="512" alt="Cal drawio (1)" src="https://github.com/user-attachments/assets/1f6684f6-ed29-429c-8a5d-066877dd4b65" /> | 
