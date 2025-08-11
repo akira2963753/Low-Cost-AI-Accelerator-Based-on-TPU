@@ -119,7 +119,7 @@ The above is the proposed TPU architecture. The input weight data is first proce
   
 #
   
-**If you want to see detail of the algorithm about WPU, you can go [here](./Py_Src/WPU_Algorithm/WPU_Algorithm.py).**  
+**If you want to see detail of the algorithm about WPU, you can go [Here.](./Py_Src/WPU_Algorithm/WPU_Algorithm.py)**  
 The storage and computation mechanism is illustrated in the figure below:    
   
 |<img width="1092" height="578" alt="Design_MSR drawio (2)" src="https://github.com/user-attachments/assets/48697522-db78-4900-a01a-946885f3f35f" /> | <img width="844" height="512" alt="Cal drawio (1)" src="https://github.com/user-attachments/assets/1f6684f6-ed29-429c-8a5d-066877dd4b65" /> | 
