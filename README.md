@@ -117,7 +117,7 @@ Below is the architecture of the model used in our training :
   
 The above is the proposed TPU architecture. The input weight data is first processed by the Weight Processing Unit (WPU) to determine whether it contains an MSR-4 pattern. If MSR-4 is detected, the leading four bits can be compressed into a single bit, and the least significant bit (LSB) is discarded, as it will be compensated during computation by fixing the LSB to 1 within the Reduced-precision Processing Element (RPE). A Shift Bit = 0 is added in front of the data to indicate that it is an MSR-4 weight. For weights without MSR-4, the leading four bits are preserved, and a Shift Bit = 0 is similarly added to indicate that it is a non-MSR-4 weight. Among the remaining four bits, the lowest three bits are stored in a Compensation Memory, since the LSB will again be fixed to 1 in the Compensation Processing Element (CPE) during computation as a form of expected value compensation.     
   
-**If you want to see detail of the algorithm about WPU, you can go [Here.](./Py_Src/WPU_Algorithm/WPU_Algorithm.py)**  
+**If you want to see detail of the algorithm about WPU, you can go [Here.](./Py_Src/WPU_Algorithm/WPU_Algorithm.py)**
 #
   
 The storage and computation mechanism is illustrated in the figure below:    
