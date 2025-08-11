@@ -14,7 +14,7 @@ This approach enables us to achieve higher accuracy, and in some models, even su
 ### Repository Structure :  
 ```
 Low Cost AI Accelerator Based on TPU /
-├── Model/                    # Model Training  
+├── Model/                           # Model Training  
 │   ├── MLP.py         
 │   └── LeNet.py              
 │   └── ResNet.py              
