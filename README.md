@@ -38,7 +38,9 @@ Low Cost AI Accelerator Based on TPU /
 ├── Result_Simulator/         # Check the Answer
 ├── Area_Analysis/            # Analyze the Area
 │   └── area.log              # The system area report
-│   └── area.py               # Area calculator (RPE, CPE)  
+│   └── area.py               # Area calculator (RPE, CPE)
+├── WPU_Algorithm/             # WPU_Algorithm
+└── WPU_Algorithm.py                
 └── README.md                 
 ```  
 
