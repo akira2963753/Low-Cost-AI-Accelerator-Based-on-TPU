@@ -176,6 +176,9 @@ After the Mem_Write signal is asserted and completed, the system prepares to rea
 We use 8x8 Systolic Array and 8x3 Compensation Array to simulate the proposed architecture.  
 Therefore, We use 64 x 5bit Weight Memory, 64 x 7bit Activation Memory and 24 x 3bit Compensation Memory to help ours simulation.  
 
+### Test Pattern  
+<img width="1533" height="527" alt="Test_Pattern drawio" src="https://github.com/user-attachments/assets/1504ccd2-dff1-4c2f-b3eb-ac1592c20d99" />   
+  
 ### Answer Check   
 We use Pytohn to check the answer, the result in [output.out](./Src/Output.out)  
 <img width="888" height="372" alt="image" src="https://github.com/user-attachments/assets/bcb49d35-67db-46d4-82fc-da65306aa883" />
