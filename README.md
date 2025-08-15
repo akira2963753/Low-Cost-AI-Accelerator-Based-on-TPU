@@ -263,3 +263,5 @@ As for the increase in Compensation Memory and the reduction in Weight Memory an
 **[6] APTPU: Approximate Computing Based Tensor Processing Unit**   
 
 
+
+[Untitled.json](https://github.com/user-attachments/files/21788176/Untitled.json)  
