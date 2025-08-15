@@ -261,7 +261,3 @@ As for the increase in Compensation Memory and the reduction in Weight Memory an
 **[4] Refresh Power Reduction of DRAMs in DNN Systems Using Hybrid Voting and ECC Method**   
 **[5] DRUM: A Dynamic Range Unbiased Multiplier for approximate applications**   
 **[6] APTPU: Approximate Computing Based Tensor Processing Unit**   
-
-
-
-[Untitled.json](https://github.com/user-attachments/files/21788176/Untitled.json)  
