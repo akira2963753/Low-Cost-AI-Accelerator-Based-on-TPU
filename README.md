@@ -252,8 +252,9 @@ As for the increase in Compensation Memory and the reduction in Weight Memory an
 |**Activation Function**| 0.11% | 213 | 
 |**Compensation Array**| 17.8% | 34545 |
 
-
-
+## FloorPlan  :  
+...  
+  
 ## Reference : 
 **[0] [Weight-Aware and Reduced-Precision Architecture Designs for Low-Cost AI Accelerators](https://hdl.handle.net/11296/zs6qk8)**   
 **[1] In-Datacenter Performance Analysis of a Tensor Processing Unit**     
