@@ -1,4 +1,4 @@
-# Low-cost, High-performance AI Accelerator Architecture Design Based on Weight Characteristics  
+# Low-Cost Architecture Design of an AI Accelerator Based on TPU    
 We build upon the **MSR-4 data** characteristic proposed in our senior’s thesis [0]  , which helps **reduce weight bit-length**, and further design a compensation architecture to **compensate the loss caused by Non-MSR-4 data.**   
    
 This approach enables us to achieve higher accuracy, and in some models, even surpass the original quantization accuracy. **Therefore, compared with conventional TPU architectures, our proposed design can achieve higher accuracy while reducing hardware overhead.**    
