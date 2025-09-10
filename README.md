@@ -145,33 +145,7 @@ After the Mem_Write signal is asserted and completed, the system prepares to rea
     
 <img width="1479" height="265" alt="image" src="https://github.com/user-attachments/assets/38a219e8-0829-4202-b606-5d9f348363e4" />     
 <img width="1483" height="381" alt="image" src="https://github.com/user-attachments/assets/c862e6f0-32f7-44e1-a536-39cbc3576a18" />      
-
-## The Number of Cycles Needed for Processing in the Systolic Array (SA)  
-
-### 1. Pre-load Weight Data into SA
-
-| Action                           | Cycles Needed        |
-|----------------------------------|----------------------|
-| Pre-load Weight into RPE         | **n - 1**            |
-| Pre-load Weight into CPE         | **(n x 0.1%) - 1**   |
-| **Total needed**                 | **n - 1**            |
-
-### 2. Load Activation into SA
-
-| Action                           | Cycles Needed        |
-|----------------------------------|----------------------|
-| Input Buffer Fetch the Activation| **1**                |
-| Load Activation into SA          | **n - 1 (Input Delay) + n (Matrix Size) + n - 1 (Broadcast Delay)** |
-| **Total needed**                 | **4n - 2**           |
-
-### 3. Output the Result
-
-| Action                           | Cycles Needed        |
-|----------------------------------|----------------------|
-| Output the Result                | **1**                |
-| **Total needed**                 | **4n - 1**           |
-
- 
+   
 ## RTL Simulation :   
 We use 8x8 Systolic Array and 8x3 Compensation Array to simulate the proposed architecture.  
 Therefore, We use 64 x 5bit Weight Memory, 64 x 7bit Activation Memory and 24 x 3bit Compensation Memory to help ours simulation.  
@@ -251,6 +225,11 @@ As for the increase in Compensation Memory and the reduction in Weight Memory an
 |**Activation Function**| 0.11% | 213 | 
 |**Compensation Array**| 17.8% | 34545 |
 
+## Performance Analysis :  
+|Type of TPU| Original TPU | Proposed TPU |
+|:--:|:--:|:--:|
+| **TOPS** | 22.02 | **28.56** |  
+  
 ## FloorPlan  :  
 ...  
   
