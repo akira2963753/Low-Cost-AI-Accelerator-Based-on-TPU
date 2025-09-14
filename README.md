@@ -8,7 +8,7 @@ This approach enables us to achieve higher accuracy, and in some models, even su
 ### Development Environment :    
 - **RTL Simulator** : *ModelSim-Intel FPGA Standard Edition, Version 20.1.1, windows* / *Vivado*   
 - **Synthesis Tool** : *Synopsys Design Compiler*
-- **FloorPlan Tool** : *Synopsys Design Compiler II*  
+- **FloorPlan Tool** : *Synopsys IC Compiler II*  
 - **Model Training** : *Pytorch*    
    
 ### Repository Structure :  
