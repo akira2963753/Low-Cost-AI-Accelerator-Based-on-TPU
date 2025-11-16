@@ -1,7 +1,7 @@
 # Low-Cost AI Accelerator Based on TPU    
 We build upon the **MSR-4 data** characteristic proposed in our senior’s thesis [0]  , which helps **reduce weight bit-length**, and further design a compensation architecture to **compensate the loss caused by Non-MSR-4 data.**   
    
-The proposed design **delivers +6.54 TOPS** over the INT8 TPU baseline, demonstrating performance benefits. With minimal hardware overhead, the system attains **accuracy surpassing INT8 quantization on MLP & LeNet.** Overall, the systolic array **reduces hardware cost by 16.4% and memory access by 18.46%**, while simultaneously improving efficiency and accuracy compared with INT8 architectures.  
+The proposed design **delivers +6.54 TOPS** over the INT8 TPU baseline. With minimal hardware overhead, the system attains **accuracy surpassing INT8 quantization on MLP & LeNet.** Overall, the systolic array **reduces hardware cost by 16.4% and memory access by 18.46%**, while simultaneously improving efficiency and accuracy compared with INT8 architectures.   
 
 # 
   
