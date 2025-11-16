@@ -131,7 +131,9 @@ Next, the TPU operates using a Weight-Stationary (WS) dataflow. The weights and 
 <img width="2584" height="854" alt="Acc drawio" src="https://github.com/user-attachments/assets/eceb0009-4f9f-4e60-abad-f00a223fcf31" />  
     
 ## RPE / CPE Architecture :   
-<img width="2378" height="1197" alt="簡圖 drawio (1)" src="https://github.com/user-attachments/assets/1a9960d5-bf6d-4f90-af03-0f8ba4d9a622" />  
+|<img width="1477" height="841" alt="RPE 的副本 drawio (3)" src="https://github.com/user-attachments/assets/0725457b-367b-41bd-8991-cc9d44a1ef6c" />|<img width="1395" height="841" alt="CPE 的副本 drawio (1)" src="https://github.com/user-attachments/assets/951e8c33-66d1-4b75-a0fc-71f329822ea5" />|
+|--|--|
+
   
 ## Weight / Compensation / Activation Memory Architecture :
 In this project, for implementation convenience, we made some slight adjustments to the memory architecture by configuring it to output 8 data values per access. In practice, each memory block can be regarded as consisting of 8 individual SRAMs, enabling it to output 8 data entries simultaneously.   
