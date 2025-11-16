@@ -120,9 +120,9 @@ The above is the proposed TPU architecture. The input weight data is first proce
     
 The storage and computation mechanism is illustrated in the figure below:    
   
-|<img width="1092" height="578" alt="Design_MSR drawio (2)" src="https://github.com/user-attachments/assets/48697522-db78-4900-a01a-946885f3f35f" /> | <img width="844" height="512" alt="Cal drawio (1)" src="https://github.com/user-attachments/assets/1f6684f6-ed29-429c-8a5d-066877dd4b65" /> | 
-|-----------------------------------------------|-------------------------------|
-  
+<img width="1337" height="668" alt="Design_MSR 的副本 drawio (1)" src="https://github.com/user-attachments/assets/edaf9bde-74d2-4aee-aa76-9c0ee9678139" />  
+<img width="1024" height="864" alt="Cal drawio (2)" src="https://github.com/user-attachments/assets/a67b742e-f587-44f0-867d-4cbfbe32fa3a" />  
+
 An important consideration is that, for signed operations, the compensation weight must include an extra sign bit, which reflects the sign of the original weight value.  
   
 # 
