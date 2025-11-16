@@ -137,8 +137,8 @@ Next, the TPU operates using a Weight-Stationary (WS) dataflow. The weights and 
   
 ## Weight / Compensation / Activation Memory Architecture :
 In this project, for implementation convenience, we made some slight adjustments to the memory architecture by configuring it to output 8 data values per access. In practice, each memory block can be regarded as consisting of 8 individual SRAMs, enabling it to output 8 data entries simultaneously.   
-  
-<img width="3150" height="698" alt="Memory drawio" src="https://github.com/user-attachments/assets/bc47a240-fb7a-4a97-a1e6-861cafecec3e" />  
+
+<img width="382" height="282" alt="Mem_Wrapper drawio" src="https://github.com/user-attachments/assets/d1f4d5f6-fa5a-4654-9f34-1e341b465f50" />  
 
 ## Memory Read Control : 
 After the Mem_Write signal is asserted and completed, the system prepares to read from the Weight Memory and Compensation Memory in order to preload the weight data into the PE of the Systolic Array. Therefore, once Mem_Write finishes, I assert Mem_Rd_en on the falling edge to trigger the memory read. Then, on the next falling edge, the Pre_LoadWeight and Pre_LoadCWeight signals are asserted, allowing the previously fetched data to be successfully loaded into the systolic array. The same mechanism applies to the Activation Memory. After the weight preloading is complete, activations are introduced. To improve efficiency, we can assert Mem_Rd_en on the falling edge just before the last weight preload, so that in the next cycle, when Cal is asserted on the falling edge and the PEs begin computation on the rising edge, the corresponding activation data can be immediately provided to the input buffer—thus speeding up the overall operation.  
